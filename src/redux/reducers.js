@@ -2,7 +2,7 @@ import types from './types';
 
 const initialState = {
   dark: false,
-  sections: ["section1", "section2"],
+  sections: ['Graphic Design', 'Illustrations', 'Photography', 'Programming'],
   openSection: {
     title: "title",
     description: "description",
@@ -13,8 +13,8 @@ const initialState = {
 
 const HudReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.CHANGE_MODE: {
-      return { ...state, dark: action.dark };
+    case types.SWITCH_MODE: {
+      return { ...state, dark: action.mode };
     }
     default:
       return state;

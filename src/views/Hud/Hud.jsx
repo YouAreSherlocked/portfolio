@@ -4,6 +4,7 @@ import Sun from '../../img/portfolio_sun.svg';
 import SunActive from '../../img/portfolio_sun_active.svg';
 import Moon from '../../img/portfolio_moon.svg';
 import MoonActive from '../../img/portfolio_moon_active.svg';
+import { switchMode } from '../../redux/switch_mode';
 import { connect } from 'react-redux';
 
 class Hud extends Component {
@@ -11,7 +12,6 @@ class Hud extends Component {
     super(props);
 
     this.state = {
-      isDay: false,
       isOnTop: true,
       sun: {
         transform: 'translateY(-18px)',
@@ -24,8 +24,7 @@ class Hud extends Component {
       scroll: {
         top: '60px',
         opacity: '0'
-      },
-      sectionNames: ['Illustrations', 'Photography', 'Graphic Design', 'Websites']
+      }
     }
 
     this.handleClickMode = this.handleClickMode.bind(this);
@@ -35,7 +34,6 @@ class Hud extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    console.log(this.props)
   }
 
   componentWillUnmount() {
@@ -77,20 +75,19 @@ class Hud extends Component {
   }
 
   changeMode() {
-    const { isDay } = this.state;
-    const body = document.body;
-    body.style.background = isDay ? '#fff' : '#333';
+    this.props.switchMode();
+    document.body.style.background = this.props.dark ? '#fff' : '#333';
   }
 
   render() {
-    const { sectionNames } = this.state;
-    const nav = sectionNames.map(section => {
+    console.log(this.props)
+    const nav = this.props.sections.map(section => {
       const link = '#' + {section};
       return <a key={section} href={link}>{section}</a>
     });
 
     const hud = (
-      <div class = "hud">
+      <div className = "hud">
         <div className="left orientation">
           <div className="line"></div>
           <div id="p1"></div>
@@ -121,7 +118,6 @@ class Hud extends Component {
       </div>
     );
     return (
-
       <React.Fragment>
         {hud}
       </React.Fragment>
@@ -130,6 +126,7 @@ class Hud extends Component {
 }
 
 const mapStateToProps = state => ({
-  sections: state.sections
+  dark: state.state.dark,
+  sections: state.state.sections
 });
-export default connect(mapStateToProps)(Hud);
+export default connect(mapStateToProps, { switchMode })(Hud);

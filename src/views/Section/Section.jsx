@@ -17,7 +17,6 @@ class Section extends Component {
 
   componentDidMount() {
     const x = this.props.hhgghh;
-    console.log('->' + x);
     //this.setState({sectionNames: {x}})
   }
 
@@ -27,7 +26,6 @@ class Section extends Component {
 
   createGallery(sec) {
     let imgs = [];
-    console.log(this.state.sectionNames[1])
     switch(sec) {
       case this.state.sectionNames[0]:
         imgs = this.importAll(require.context('../../img/Graphic Design/', false, /\.(png|jpe?g|svg)$/));
@@ -69,8 +67,6 @@ class Section extends Component {
         </div>
       )
     });
-    console.log('sections');
-    console.log(sections);
     return (
       <div className='content'>
         {sections}
