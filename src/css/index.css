@@ -13,6 +13,8 @@
   src: url('../font/DIN-Regular.ttf');
 }
 
+/*--- GENERAL ---*/
+
 body {
   margin: 0;
   padding: 0;
@@ -73,6 +75,16 @@ a:hover {
   font-weight: bold;
 }
 
+.go-dark {
+  color: #ddd !important;
+  border-color: #ddd !important;
+}
+div.go-dark {
+  background-color: #333 !important;
+}
+
+/*--- HOME ---*/
+
 .header {
   display: flex;
   align-items: center;
@@ -119,6 +131,8 @@ a:hover {
   margin: 3px;
   cursor: pointer;
 }
+
+/*--- HUD ---*/
 
 .left, .center, .right {
   position: fixed;
@@ -280,6 +294,23 @@ a:hover {
   height: 90%;
 }
 
+.sun {
+  background-image: url(../img/portfolio_sun.svg);
+  transform: translateY(-18px);
+}
+.sun-inactive {
+  background-image: url(../img/portfolio_sun_inactive.svg);
+  transform: translateY(18px);
+}
+.moon {
+  background-image: url(../img/portfolio_moon.svg);
+  transform: translateY(-18px);
+}
+.moon-inactive {
+  background-image: url(../img/portfolio_moon_inactive.svg);
+  transform: translateY(18px);
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -294,8 +325,6 @@ a:hover {
   height: 200px;
   overflow: hidden;
 }
-
-
 
 .content {
   width: 80%;

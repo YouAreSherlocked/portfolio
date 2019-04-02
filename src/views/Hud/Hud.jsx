@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
-import Sun from '../../img/portfolio_sun.svg';
-import SunActive from '../../img/portfolio_sun_active.svg';
-import Moon from '../../img/portfolio_moon.svg';
-import MoonActive from '../../img/portfolio_moon_active.svg';
 import { switchMode } from '../../redux/switch_mode';
 import { connect } from 'react-redux';
 
@@ -13,14 +9,8 @@ class Hud extends Component {
 
     this.state = {
       isOnTop: true,
-      sun: {
-        transform: 'translateY(-18px)',
-        backgroundImage: `url(${SunActive})`
-      },
-      moon: {
-        transform: 'translateY(18px)',
-        backgroundImage: `url(${Moon})`
-      }, 
+      sun: true,
+      moon: false,
       scroll: {
         top: '60px',
         opacity: '0'
@@ -41,25 +31,12 @@ class Hud extends Component {
   }
 
   handleClickMode() {
-    const { isDay } = this.state;
-    this.setState(prevState => ({
-      sun: {
-        transform: 'translateY(' + (isDay ? '-' : '') + '18px)',
-        backgroundImage: `url(${isDay ? SunActive : Sun}`
-      },
-      moon: {
-        transform: 'translateY(' + (isDay ? '' : '-') + '18px)',
-        backgroundImage: `url(${isDay ? Moon : MoonActive}`
-      },
-      isDay: !prevState.isDay
-    }));
     this.changeMode();
   }
 
   handleClickTop() {
     window.scrollTo(0, 0);
   }
-
 
   handleScroll() {
     const { isOnTop } = this.state;
@@ -75,8 +52,26 @@ class Hud extends Component {
   }
 
   changeMode() {
-    this.props.switchMode();
-    document.body.style.background = this.props.dark ? '#fff' : '#333';
+    this.props.dark ? this.goBright() : this.goDark();
+    this.setState(prev => ({
+      sun: !prev.sun,
+      moon: !prev.moon
+    }));
+    this.props.switchMode(!this.props.dark);
+  }
+
+  goDark() {
+    const all = document.getElementsByTagName('*');
+    for (let i=0; i<all.length; i++) {
+      all[i].className += " go-dark"
+    }
+  }
+
+  goBright() {
+    const all = document.getElementsByTagName('*');
+    for (let i=0; i<all.length; i++) {
+      all[i].className -= " go-dark"
+    }
   }
 
   render() {
@@ -103,9 +98,9 @@ class Hud extends Component {
           <span></span> 
         </div>
         <div className="right mode" onClick={this.handleClickMode}>
-          <div className="mode-obj sun" style={this.state.sun}></div>
+          <div className={`mode-obj ${this.state.sun ? 'sun' : 'sun-inactive'}`}></div>
           <div className="mode-seperator"></div>
-          <div className="mode-obj moon" style={this.state.moon}></div>
+          <div className={`mode-obj ${this.state.moon ? 'moon' : 'moon-inactive'}`}></div>
         </div>
         <img className="right go-to-top" src={require('../../img/portfolio_go_to_top.svg')} alt="Go To Top" onClick={this.handleClickTop} />
         <img id="up" className="center up go-to" src={require('../../img/portfolio_up.svg')} alt="Previous Article" style={this.state.scroll} />

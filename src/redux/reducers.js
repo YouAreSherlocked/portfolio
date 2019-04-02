@@ -1,14 +1,14 @@
 import types from './types';
 
 const initialState = {
-  dark: false,
   sections: ['Graphic Design', 'Illustrations', 'Photography', 'Programming'],
   openSection: {
     title: "title",
     description: "description",
     date: "date",
     img: "img"
-  }
+  },
+  dark: false
 };
 
 const HudReducer = (state = initialState, action) => {
