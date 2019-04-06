@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
-import { switchMode } from '../../redux/switch_mode';
+import { switchMode } from '../../redux/actions/switch_mode';
 import { connect } from 'react-redux';
+import {goDark, goBright } from '../../redux/operations';
 
 class Hud extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class Hud extends Component {
   }
 
   changeMode() {
-    this.props.dark ? this.goBright() : this.goDark();
+    this.props.dark ? goBright() : goDark();
     this.setState(prev => ({
       sun: !prev.sun,
       moon: !prev.moon
@@ -60,28 +61,8 @@ class Hud extends Component {
     this.props.switchMode(!this.props.dark);
   }
 
-  goDark() {
-    const all = document.getElementsByTagName('*');
-    for (let i=0; i<all.length; i++) {
-      all[i].className += " go-dark"
-    }
-  }
-
-  goBright() {
-    const all = document.getElementsByTagName('*');
-    for (let i=0; i<all.length; i++) {
-      all[i].className -= " go-dark"
-    }
-  }
-
   render() {
-    console.log(this.props)
-    const nav = this.props.sections.map(section => {
-      const link = '#' + {section};
-      return <a key={section} href={link}>{section}</a>
-    });
-
-    const hud = (
+  const hud = (
       <div className = "hud">
         <div className="left orientation">
           <div className="line"></div>
@@ -90,7 +71,6 @@ class Hud extends Component {
           <div id="p3"></div>
           <div id="p4"></div>
         </div>
-        <div className="left name">Timo Mayer</div>
         <div className="right hamburger">
           <input type="checkbox" />
           <span></span>
@@ -102,13 +82,10 @@ class Hud extends Component {
           <div className="mode-seperator"></div>
           <div className={`mode-obj ${this.state.moon ? 'moon' : 'moon-inactive'}`}></div>
         </div>
-        <img className="right go-to-top" src={require('../../img/portfolio_go_to_top.svg')} alt="Go To Top" onClick={this.handleClickTop} />
-        <img id="up" className="center up go-to" src={require('../../img/portfolio_up.svg')} alt="Previous Article" style={this.state.scroll} />
-        <img id="down" className="center down go-to" src={require('../../img/portfolio_down.svg')} alt="Previous Article" />
+        <img className="right go-to-top" src={require('../../assets/img/portfolio_go_to_top.svg')} alt="Go To Top" onClick={this.handleClickTop} />
+        <img id="up" className="center up go-to" src={require('../../assets/img/portfolio_up.svg')} alt="Previous Article" style={this.state.scroll} />
+        <img id="down" className="center down go-to" src={require('../../assets/img/portfolio_down.svg')} alt="Previous Article" />
         <div className='flyout-menu'>
-          <nav>
-            {nav}
-          </nav>
         </div>
       </div>
     );

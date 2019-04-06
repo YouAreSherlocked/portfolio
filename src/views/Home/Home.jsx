@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import '../../css/index.css';
 import Hud from '../Hud/Hud';
-import Section from '../Section/Section';
+import Welcome from '../welcome/Welcome';
+import Work from '../Work/Work';
 
 class Home extends Component {
 
@@ -12,11 +13,12 @@ class Home extends Component {
     return (
       <React.Fragment>
         <Hud />
+        <Welcome />
         <div className='intro'>
           <h2>Opening</h2>
           <p className='intro-text'>Lorem Ipsum Lorem Ipsum Lore Ipsum Lorem Ipsum</p>
         </div>
-        <Section />
+        <Work />
       </React.Fragment>
     );
   };
