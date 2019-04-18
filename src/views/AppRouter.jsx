@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import ErrorPage from './ErrorPage/ErrorPage';
 import Home from './Home/Home';
+import {WorkDetail} from './WorkDetail/WorkDetail';
 
 
 class AppRouter extends Component {
@@ -13,6 +14,7 @@ class AppRouter extends Component {
           <BrowserRouter>
               <Switch>
                   <Route exact path="/" component={Home}></Route>
+                  <Route exact path="/detail/:id" component={WorkDetail}></Route>
                   <Route component={ErrorPage}></Route>
               </Switch>
           </BrowserRouter>

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import '../../css/index.css';
 
 class WorkSection extends Component {
   getProjectCards(projects) {
     const cards = projects.map((project, i) => (
       <div className="project-card" key={i}>
-        <p>{project.title}</p>
+        <Link to={`/detail/${project.title}`}>
+          <p>{project.title}</p>
+        </Link>
       </div>
     ));
     return (
