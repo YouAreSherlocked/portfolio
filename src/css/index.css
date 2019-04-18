@@ -396,4 +396,7 @@ div.go-dark {
   width: 80%;
   margin: auto;
 }
+#workDetail > .intro div:first-child {
+  
+}
 /* #endregion */
