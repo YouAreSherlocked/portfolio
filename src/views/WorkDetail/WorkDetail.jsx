@@ -1,18 +1,20 @@
 import React from 'react';
 import '../../css/index.css';
 import HeaderSmall from '../Header/HeaderSmall';
+import Hud from '../Hud/Hud';
 
 export const WorkDetail = (props) => (
   <React.Fragment>
     <HeaderSmall></HeaderSmall>
+    <Hud goDown></Hud>
     <section id="workDetail">
-      <h3>Detail {props.match.params.id}</h3>
       <div className="intro">
         <div>
-          <img src={props.image} />
+          <img src={props.location.state.project.image} alt="project intro" />
         </div>
         <div>
-          <p>{props.descriptions}</p>
+          <h3>{props.location.state.project.title}</h3>
+          <p>{props.location.state.project.description}</p>
         </div>
       </div>
     </section>

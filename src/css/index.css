@@ -72,6 +72,38 @@ a:hover {
 div.go-dark {
   background-color: #333 !important;
 }
+
+.appear {
+  display: block;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1 }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0 }
+}
+
+.appear-from-bottom {
+  display: block;
+  animation: fadeInFromBottom 1s;
+}
+
+@keyframes fadeInFromBottom {
+  from { 
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
 /* #endregion */
 /* #region --- WELCOME */
 
@@ -312,10 +344,10 @@ div.go-dark {
 }
 
 .up, .down {
+  display: none;
   width: 40px;
   height: auto;
   cursor: pointer;
-  transition: all .5s ease;
   margin: 0;
 }
 
@@ -396,7 +428,38 @@ div.go-dark {
   width: 80%;
   margin: auto;
 }
+
+#workDetail > .intro {
+  display: flex;
+  justify-content: center;
+}
+
+#workDetail > .intro > * {
+  height: 80vh;
+}
+
 #workDetail > .intro div:first-child {
-  
+  display: flex;
+  justify-content: center;
+  flex: 1 0 40%;
+}
+
+#workDetail > .intro div:first-child > img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+#workDetail > .intro div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 0 60%;
+  padding: 80px;
+}
+
+#workDetail > .intro div:last-child >  {
+  flex: 1 0 60%;
+  padding: 80px;
 }
 /* #endregion */

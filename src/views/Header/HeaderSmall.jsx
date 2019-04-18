@@ -8,7 +8,7 @@ class HeaderSmall extends Component {
     return (
       <section id="headerSmall">
         <Link to="/">
-          <img src={require("../../assets/img/portfolio_go_back.svg")} />
+          <img src={require("../../assets/img/portfolio_go_back.svg")} alt="go back" />
         </Link>
       </section>
     );

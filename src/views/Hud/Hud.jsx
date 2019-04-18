@@ -63,6 +63,19 @@ class Hud extends Component {
 
   render() {
   const hud = (
+    this.props.goDown ? 
+      <div className = "hud">
+        <div className="right mode" onClick={this.handleClickMode}>
+          <div className={`mode-obj ${this.state.sun ? 'sun' : 'sun-inactive'}`}></div>
+          <div className="mode-seperator"></div>
+          <div className={`mode-obj ${this.state.moon ? 'moon' : 'moon-inactive'}`}></div>
+        </div>
+        <img className="right go-to-top" src={require('../../assets/img/portfolio_go_to_top.svg')} alt="Go To Top" onClick={this.handleClickTop} />
+        <img id="down" className="center down go-to" src={require('../../assets/img/portfolio_down.svg')} alt="Previous Article" />
+        <div className='flyout-menu'>
+        </div>
+      </div>
+    :
       <div className = "hud">
         <div className="left orientation">
           <div className="line"></div>
