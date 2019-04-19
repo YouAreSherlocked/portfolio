@@ -3,6 +3,8 @@ import '../../css/index.css';
 import { switchMode } from '../../redux/actions/switch_mode';
 import { connect } from 'react-redux';
 import {goDark, goBright } from '../../redux/operations';
+import Orientation from './Orientation';
+import Mode from './Mode';
 
 class Hud extends Component {
   constructor(props) {
@@ -10,15 +12,12 @@ class Hud extends Component {
 
     this.state = {
       isOnTop: true,
-      sun: true,
-      moon: false,
       scroll: {
         top: '60px',
         opacity: '0'
       }
     }
 
-    this.handleClickMode = this.handleClickMode.bind(this);
     this.handleClickTop = this.handleClickTop.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
   }
@@ -29,10 +28,6 @@ class Hud extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleClickMode() {
-    this.changeMode();
   }
 
   handleClickTop() {
@@ -52,54 +47,30 @@ class Hud extends Component {
     });
   }
 
-  changeMode() {
-    this.props.dark ? goBright() : goDark();
-    this.setState(prev => ({
-      sun: !prev.sun,
-      moon: !prev.moon
-    }));
-    this.props.switchMode(!this.props.dark);
-  }
-
   render() {
   const hud = (
-    this.props.goDown ? 
+
       <div className = "hud">
-        <div className="right mode" onClick={this.handleClickMode}>
-          <div className={`mode-obj ${this.state.sun ? 'sun' : 'sun-inactive'}`}></div>
-          <div className="mode-seperator"></div>
-          <div className={`mode-obj ${this.state.moon ? 'moon' : 'moon-inactive'}`}></div>
-        </div>
+        <Mode changeMode={this.props.switchMode}></Mode>
         <img className="right go-to-top" src={require('../../assets/img/portfolio_go_to_top.svg')} alt="Go To Top" onClick={this.handleClickTop} />
         <img id="down" className="center down go-to" src={require('../../assets/img/portfolio_down.svg')} alt="Previous Article" />
         <div className='flyout-menu'>
         </div>
-      </div>
-    :
-      <div className = "hud">
-        <div className="left orientation">
-          <div className="line"></div>
-          <div id="p1"></div>
-          <div id="p2"></div>
-          <div id="p3"></div>
-          <div id="p4"></div>
-        </div>
+
+      {!this.props.goDown ? 
+      <React.Fragment>
+        <Orientation sections={this.props.sections}></Orientation>
         <div className="right hamburger">
           <input type="checkbox" />
           <span></span>
           <span></span>
           <span></span> 
         </div>
-        <div className="right mode" onClick={this.handleClickMode}>
-          <div className={`mode-obj ${this.state.sun ? 'sun' : 'sun-inactive'}`}></div>
-          <div className="mode-seperator"></div>
-          <div className={`mode-obj ${this.state.moon ? 'moon' : 'moon-inactive'}`}></div>
-        </div>
-        <img className="right go-to-top" src={require('../../assets/img/portfolio_go_to_top.svg')} alt="Go To Top" onClick={this.handleClickTop} />
+
         <img id="up" className="center up go-to" src={require('../../assets/img/portfolio_up.svg')} alt="Previous Article" style={this.state.scroll} />
-        <img id="down" className="center down go-to" src={require('../../assets/img/portfolio_down.svg')} alt="Previous Article" />
-        <div className='flyout-menu'>
-        </div>
+
+      </React.Fragment>
+      : null }
       </div>
     );
     return (
@@ -114,4 +85,9 @@ const mapStateToProps = state => ({
   dark: state.state.dark,
   sections: state.state.sections
 });
+
+const mapDispatchToProps = dispatch => ({
+  switchMode: () => dispatch ({ type: 'SWITCH_MODE'})
+});
+
 export default connect(mapStateToProps, { switchMode })(Hud);

@@ -20,11 +20,12 @@ class WorkSection extends Component {
   }
 
   render() {
+    const { projects } = this.props;
     return (
-      <div className='work-section'>
+      <div className='work-section' id={this.props.title.toLowerCase().replace(" ", "")}>
         <h3>{this.props.title}</h3>
         <div className='gallery'>
-            {this.createProjectCards(this.props.projects)}
+            {this.createProjectCards(projects)}
         </div>
       </div>
     );

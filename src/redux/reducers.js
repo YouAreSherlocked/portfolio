@@ -2,12 +2,6 @@ import types from './types';
 
 const initialState = {
   sections: ['Graphic Design', 'Illustrations', 'Photography', 'Programming'],
-  openSection: {
-    title: "title",
-    description: "description",
-    date: "date",
-    img: "img"
-  },
   dark: false
 };
 
