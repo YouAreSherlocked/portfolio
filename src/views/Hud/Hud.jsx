@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
-import { switchMode } from '../../redux/actions/switch_mode';
 import { connect } from 'react-redux';
-import {goDark, goBright } from '../../redux/operations';
 import Orientation from './Orientation';
 import Mode from './Mode';
+import Navigation from './Navigation';
+import GoToTop from './GoToTop';
+import SwitchArticle from './SwitchArticle';
 
 class Hud extends Component {
   constructor(props) {
@@ -49,26 +50,17 @@ class Hud extends Component {
 
   render() {
   const hud = (
-
       <div className = "hud">
-        <Mode changeMode={this.props.switchMode}></Mode>
-        <img className="right go-to-top" src={require('../../assets/img/portfolio_go_to_top.svg')} alt="Go To Top" onClick={this.handleClickTop} />
-        <img id="down" className="center down go-to" src={require('../../assets/img/portfolio_down.svg')} alt="Previous Article" />
+        <Mode></Mode>
         <div className='flyout-menu'>
         </div>
 
       {!this.props.goDown ? 
       <React.Fragment>
         <Orientation sections={this.props.sections}></Orientation>
-        <div className="right hamburger">
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span> 
-        </div>
-
-        <img id="up" className="center up go-to" src={require('../../assets/img/portfolio_up.svg')} alt="Previous Article" style={this.state.scroll} />
-
+        <Navigation></Navigation>
+        <SwitchArticle></SwitchArticle>
+        <GoToTop></GoToTop>
       </React.Fragment>
       : null }
       </div>
@@ -90,4 +82,4 @@ const mapDispatchToProps = dispatch => ({
   switchMode: () => dispatch ({ type: 'SWITCH_MODE'})
 });
 
-export default connect(mapStateToProps, { switchMode })(Hud);
+export default connect(mapStateToProps, mapDispatchToProps)(Hud);

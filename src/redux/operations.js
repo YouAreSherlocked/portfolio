@@ -1,3 +1,4 @@
+import actions from './actions';
 
 const goDark = () => {
     const all = document.getElementsByTagName('*');
@@ -12,5 +13,12 @@ const goBright = () => {
         all[i].className -= " go-dark"
     }
 }
+const switchMode = () => async dispatch  => {
+    dispatch(actions.switchMode);
+}
 
-  export {goDark, goBright};
+export default {
+    goDark, 
+    goBright,
+    switchMode
+};

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
 import { withRouter, } from 'react-router-dom';
-import {goDark, goBright } from '../../redux/operations';
+import { operations } from '../../redux';
 
 class Mode extends Component {
   constructor(props) {
@@ -20,12 +20,12 @@ class Mode extends Component {
   }
 
   changeMode() {
-    this.props.dark ? goBright() : goDark();
+    this.props.dark ? operations.goBright() : operations.goDark();
     this.setState(prev => ({
       sun: !prev.sun,
       moon: !prev.moon
     }));
-    this.props.switchMode(!this.props.dark);
+    operations.switchMode(!this.props.dark);
   }
 
   render() {
