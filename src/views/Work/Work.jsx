@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import '../../css/index.css';
 import WorkSection from '../WorkSection/WorkSection';
-import { getProjects } from '../../redux/services/fetchWorks';
 
 class Work extends Component {
   render() {
+    console.log(this.props)
     const sections = this.props.sections.map(section => (
       <WorkSection 
         title={section} 
         id={section} 
         key={section} 
-        projects={getProjects}>
+        projects={this.props.projects}>
       </WorkSection>
     ));
     return (
@@ -22,8 +21,4 @@ class Work extends Component {
   };
 }
 
-const mapStateToProps = state => ({
-  sections: state.state.sections
-});
-
-export default connect(mapStateToProps)(Work);
+export default Work;

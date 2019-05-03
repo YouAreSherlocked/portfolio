@@ -281,7 +281,6 @@ div.go-dark {
   background: #fff;
   border: 2px solid #333;
   border-radius: 100%;
-  margin: 18px 0;
   cursor: pointer;
   transition: background .8s ease;
 }

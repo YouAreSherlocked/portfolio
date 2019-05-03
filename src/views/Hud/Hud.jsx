@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
-import { connect } from 'react-redux';
 import Orientation from './Orientation';
 import Mode from './Mode';
 import Navigation from './Navigation';
@@ -73,13 +72,4 @@ class Hud extends Component {
   };
 }
 
-const mapStateToProps = state => ({
-  dark: state.state.dark,
-  sections: state.state.sections
-});
-
-const mapDispatchToProps = dispatch => ({
-  switchMode: () => dispatch ({ type: 'SWITCH_MODE'})
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Hud);
+export default Hud;

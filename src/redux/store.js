@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import states from './index'
 
 const reducers = {
-  state: states
+  mainState: states
 };
 
 const rootReducer = combineReducers(reducers);
