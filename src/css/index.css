@@ -37,6 +37,10 @@ body {
   height: 300px;
 }
 
+.hidden {
+  display: none;
+}
+
 h1 {
   font-size: 20px;
   cursor: pointer;
@@ -264,7 +268,7 @@ div.go-dark {
   top: 50%;
   left: 6.5px;
   transform: translate(-50%, -50%);
-  height: 90%;
+  height: 80%;
   width: 3px;
   background: #333;
   z-index: -1;
@@ -373,8 +377,11 @@ div.go-dark {
   transform: rotate(-45deg) translate(0, 0);
 }
 
+.up {
+  top: 20px;
+}
+
 .up, .down {
-  display: none;
   width: 40px;
   height: auto;
   cursor: pointer;

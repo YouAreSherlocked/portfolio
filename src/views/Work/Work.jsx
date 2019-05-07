@@ -4,7 +4,6 @@ import WorkSection from '../WorkSection/WorkSection';
 
 class Work extends Component {
   render() {
-    console.log(this.props)
     const sections = this.props.sections.map(section => (
       <WorkSection 
         title={section} 

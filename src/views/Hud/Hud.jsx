@@ -4,63 +4,31 @@ import Orientation from './Orientation';
 import Mode from './Mode';
 import Navigation from './Navigation';
 import GoToTop from './GoToTop';
-import SwitchArticle from './SwitchArticle';
+import SwitchSection from './SwitchSection';
 
 class Hud extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOnTop: true,
-      scroll: {
-        top: '60px',
-        opacity: '0'
-      }
-    }
-
-    this.handleClickTop = this.handleClickTop.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleClickTop() {
-    window.scrollTo(0, 0);
-  }
-
-  handleScroll() {
-    const { isOnTop } = this.state;
-    var doc = document.documentElement;
-    var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-
-    this.setState({
-      isOnTop: top > 50 ? false : true,
-      scroll: { top: isOnTop ? '60px' : '20px', 
-                opacity: isOnTop ? '0' : '1'
-              },
-    });
-  }
-
+  
   render() {
-  const hud = (
+    const { scroll, sections } = this.props;
+    const trigger = 600;
+    const hud = (
       <div className = "hud">
         <Mode></Mode>
         <div className='flyout-menu'>
         </div>
 
       {!this.props.goDown ? 
-      <React.Fragment>
-        <Orientation sections={this.props.sections}></Orientation>
-        <Navigation></Navigation>
-        <SwitchArticle></SwitchArticle>
-        <GoToTop></GoToTop>
-      </React.Fragment>
+        <React.Fragment>
+          <Orientation sections={sections}
+                       trigger={trigger}
+                       scroll={scroll}>
+          </Orientation>
+          <Navigation></Navigation>
+          <SwitchSection trigger={trigger}
+                         scroll={scroll}>
+          </SwitchSection>
+          <GoToTop></GoToTop>
+        </React.Fragment>
       : null }
       </div>
     );

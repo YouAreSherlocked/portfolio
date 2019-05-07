@@ -3,19 +3,10 @@ import '../../css/index.css';
 import { withRouter } from 'react-router-dom';
 
 class SwitchArticle extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      position: 0,
-      active: ""
-    }
-  }
-
   render() {
     return (
       <React.Fragment>
-        <img id="up" className="center up go-to" src={require('../../assets/img/portfolio_up.svg')} alt="Previous Article" style={this.state.scroll} />
+        <img id="up" className={this.props.scroll > this.props.trigger ? "center up go-to appear-from-bottom" : "hidden"} src={require('../../assets/img/portfolio_up.svg')} alt="Previous Article" />
         <img id="down" className="center down go-to" src={require('../../assets/img/portfolio_down.svg')} alt="Previous Article" />
       </React.Fragment>
     );

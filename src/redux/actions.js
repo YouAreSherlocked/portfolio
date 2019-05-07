@@ -20,9 +20,15 @@ export const switchMode = mode => ({
   mode: mode
 });
 
+export const switchSection = section => ({
+  type: types.SWITCH_SECTION,
+  section: section
+});
+
 export default {
   switchMode,
   storeSections,
   storeProjects,
-  storeSkills
+  storeSkills,
+  switchSection
 }

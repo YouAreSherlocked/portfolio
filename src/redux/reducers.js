@@ -4,7 +4,8 @@ const initialState = {
   sections: [],
   projects: [],
   skills: [],
-  dark: false
+  dark: false,
+  activeSection: "section"
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -20,6 +21,9 @@ const mainReducer = (state = initialState, action) => {
     }
     case types.SWITCH_MODE: {
       return { ...state, dark: action.mode };
+    }
+    case types.SWITCH_SECTION: {
+      return { ...state, activeSection: action.section };
     }
     default:
       return state;
