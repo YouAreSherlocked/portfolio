@@ -6,6 +6,7 @@ import '../../css/index.css';
 import Hud from '../Hud/Hud';
 import Welcome from '../welcome/Welcome';
 import Work from '../Work/Work';
+import Skills from '../Skills/Skills';
 
 class Home extends Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class Home extends Component {
             <h2>Opening</h2>
             <p className='intro-text'>Lorem Ipsum Lorem Ipsum Lore Ipsum Lorem Ipsum</p>
           </div>
+          <Skills skills={this.props.skills}></Skills>
           <Work sections={this.props.sections} projects={this.props.projects} />
         </React.Fragment>
     );
@@ -56,6 +58,7 @@ const mapStateToProps = state => ({
   dark: selectors.getMode(state.mainState),
   sections: selectors.getSections(state.mainState),
   projects: selectors.getProjects(state.mainState),
+  skills: selectors.getSkills(state.mainState),
   activeSection: selectors.getActiveSection(state.mainState)
 });
 

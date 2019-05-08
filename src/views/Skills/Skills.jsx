@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import '../../css/index.css';
-import { getSkills } from '../../redux/services/fetchWorks';
 
 class Skills extends Component {
   render() {
-    const skills = this.props.skills.map(skill => (
-      <div className="skill"></div>
+    const skills = this.props.skills.map((skill, i) => (
+      <div className={skill.placeholder ? "skill placeholder" : "skill"} key={i}>
+        {!skill.placeholder ? 
+        <React.Fragment>
+          <div className="skill-score"><span>{skill.score}</span>/&thinsp;10</div>
+          <div className="skill-name">{skill.title.replace("/", " / ")}</div>
+        </React.Fragment>
+        : null}
+      </div>
     ));
     return (
       <section id='skills'>
@@ -16,8 +21,4 @@ class Skills extends Component {
   };
 }
 
-const mapStateToProps = state => ({
-  skills: state.state.skills
-});
-
-export default connect(mapStateToProps)(Skills);
+export default Skills;

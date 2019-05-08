@@ -238,7 +238,53 @@ div.go-dark {
   width: auto;
 }
 /* #endregion */
+/* #region --- SKILLS */
+
+#skills {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 296px;
+  height: 296px;
+  background: #ddd;
+  margin: 2px;
+}
+
+.skill.placeholder {
+  background: #fff;
+  color: #fff;
+}
+
+.skill div {
+  width: 100%;
+  text-align: center;
+  height: auto;
+}
+
+.skill-score {
+  height: auto;
+}
+
+.skill-score span{
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.skill-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* #endregion */
 /* #region --- HUD */
+
 
 .left, .center, .right {
   position: fixed;
