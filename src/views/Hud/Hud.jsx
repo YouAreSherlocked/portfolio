@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { operations, selectors } from '../../redux';
+
 import Orientation from './Orientation';
 import Mode from './Mode';
 import Navigation from './Navigation';
@@ -9,11 +13,13 @@ import SwitchSection from './SwitchSection';
 class Hud extends Component {
   
   render() {
-    const { scroll, sections } = this.props;
+    const { scroll, sections, darkMode, switchMode } = this.props;
     const trigger = 600;
     const hud = (
       <div className = "hud">
-        <Mode></Mode>
+        <Mode darkMode={darkMode}
+              switchMode={switchMode}>
+        </Mode>
         <div className='flyout-menu'>
         </div>
 
@@ -40,4 +46,20 @@ class Hud extends Component {
   };
 }
 
-export default Hud;
+const mapStateToProps = state => ({
+  darkMode: selectors.getMode(state.mainState),
+  sections: selectors.getSections(state.mainState),
+  projects: selectors.getProjects(state.mainState),
+  skills: selectors.getSkills(state.mainState),
+  activeSection: selectors.getActiveSection(state.mainState)
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    initState: operations.initState,
+    switchMode: operations.switchMode,
+    switchActiveSection: operations.switchActiveSection
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Hud);

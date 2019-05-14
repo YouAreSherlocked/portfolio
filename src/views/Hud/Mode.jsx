@@ -7,34 +7,21 @@ class Mode extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      sun: true,
-      moon: false
-    }
-
-    this.handleClickMode = this.handleClickMode.bind(this);
-  }
-
-  handleClickMode() {
-    this.changeMode();
+    this.changeMode = this.changeMode.bind(this);
   }
 
   changeMode() {
-    this.props.dark ? operations.goBright() : operations.goDark();
-    this.setState(prev => ({
-      sun: !prev.sun,
-      moon: !prev.moon
-    }));
-    operations.switchMode(!this.props.dark);
+    this.props.switchMode(!this.props.darkMode);
   }
 
   render() {
+    const { darkMode } = this.props;
     return (
-      <div className="right mode" onClick={this.handleClickMode}>
-        <div className={`mode-obj ${this.state.sun ? 'sun' : 'sun-inactive'}`}></div>
+      <div className="right mode" onClick={this.changeMode}>
+        <div className={`mode-obj ${darkMode ? 'sun-inactive' : 'sun'}`}></div>
         <div className="mode-seperator"></div>
-        <div className={`mode-obj ${this.state.moon ? 'moon' : 'moon-inactive'}`}></div>
-        <p>Go {this.state.moon ? "Bright" : "Dark"}</p>
+        <div className={`mode-obj ${darkMode ? 'moon' : 'moon-inactive'}`}></div>
+        <p>Go {darkMode ? "Bright" : "Dark"}</p>
       </div>
     );
   };

@@ -11,26 +11,12 @@ const initState = () => async dispatch => {
     dispatch(actions.storeSkills(skills));
 }
 
-const goDark = () => {
-    const all = document.getElementsByTagName('*');
-    for (let i=0; i<all.length; i++) {
-        all[i].className += " go-dark"
-    }
-}
-
-const goBright = () => {
-    const all = document.getElementsByTagName('*');
-    for (let i=0; i<all.length; i++) {
-        all[i].className -= " go-dark"
-    }
-}
-const switchMode = () => async dispatch  => {
-    dispatch(actions.switchMode);
+const switchMode = mode => async dispatch  => {
+    document.body.style.background = mode ? "#333" : "#fff";
+    dispatch(actions.switchMode(mode));
 }
 
 export default {
     initState,
-    goDark, 
-    goBright,
     switchMode
 };

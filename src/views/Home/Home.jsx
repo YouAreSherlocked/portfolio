@@ -32,23 +32,20 @@ class Home extends Component {
   }
 
   render() {
+    const { skills, sections, projects } = this.props;
     return (
       this.state.isLoading ? 
         <div>Loading Data :)</div>
       :
         <React.Fragment>
-          <Hud switchMode={this.props.switchMode} 
-               sections={this.props.sections} 
-               dark={this.props.dark}
-               scroll={this.state.scrollPos} 
-               activeSection={this.props.activeSection}/>
+          <Hud scroll={this.state.scrollPos}/>
           <Welcome />
           <div className='intro'>
             <h2>Opening</h2>
             <p className='intro-text'>Lorem Ipsum Lorem Ipsum Lore Ipsum Lorem Ipsum</p>
           </div>
-          <Skills skills={this.props.skills}></Skills>
-          <Work sections={this.props.sections} projects={this.props.projects} />
+          <Skills skills={skills}></Skills>
+          <Work sections={sections} projects={projects} />
         </React.Fragment>
     );
   };
@@ -58,15 +55,12 @@ const mapStateToProps = state => ({
   dark: selectors.getMode(state.mainState),
   sections: selectors.getSections(state.mainState),
   projects: selectors.getProjects(state.mainState),
-  skills: selectors.getSkills(state.mainState),
-  activeSection: selectors.getActiveSection(state.mainState)
+  skills: selectors.getSkills(state.mainState)
 });
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    initState: operations.initState,
-    switchMode: operations.switchMode,
-    switchActiveSection: operations.switchActiveSection
+    initState: operations.initState
   }, dispatch);
 };
 

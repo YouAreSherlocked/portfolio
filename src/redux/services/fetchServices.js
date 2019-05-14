@@ -73,12 +73,14 @@ export const skills = [
   {
     id: 5,
     title: "Java",
-    score: 5
+    score: 5,
+    center: true
   },
   {
     id: 6,
     title: "PHP",
-    score: 5
+    score: 5,
+    center: true
   },
   {
     id: 7,
@@ -87,24 +89,12 @@ export const skills = [
   },
   {
     id: 8,
-    title: "",
-    score: 0,
-    placeholder: true
+    title: "SQL",
+    score: 9
   },
   {
     id: 9,
-    title: "SQL",
-    score: 0
-  },
-  {
-    id: 10,
     title: "Ruby on Rails",
     score: 6
   },
-  {
-    id: 11,
-    title: "",
-    score: 0,
-    placeholder: true
-  }
 ];
