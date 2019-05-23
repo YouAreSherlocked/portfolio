@@ -63,7 +63,9 @@ class Orientation extends Component {
         }
       }
     }
-    this.showTitle(active);
+    if (this.props.activeSection !== active) {
+      this.showTitle(active);
+    }
     lastScroll = scroll;
   }
 
@@ -71,6 +73,7 @@ class Orientation extends Component {
     this.setState({
       active: e
     });
+    this.props.switchActiveSection(e);
   }
 
   hideTitle() {

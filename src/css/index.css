@@ -71,7 +71,7 @@ a:hover {
   font-weight: bold;
 }
 
-section {
+section:not(#welcome) {
   width: 80%;
   margin: 40px auto;
 }
@@ -320,7 +320,7 @@ div.go-dark {
 /* #region --- HUD */
 
 
-.left, .center, .right {
+.left, .center, .right, .hud {
   position: fixed;
 }
 
@@ -332,9 +332,16 @@ div.go-dark {
   right: 20px;
 }
 
+.top {
+  top: 20px;
+}
+
+.bottom {
+  bottom: 20px;
+}
+
 .center {
-  left: 50%;
-  margin-left: -50px;
+  left: calc(50% - 20px);
 }
 
 .orientation {
@@ -366,12 +373,10 @@ div.go-dark {
   border: 2px solid #333;
   border-radius: 100%;
   cursor: pointer;
-  transition: background .8s ease;
 }
 
 .orientation > a > div.active{
   background: #333;
-  transition: background .8s ease;
   border: 2px solid #fff;
 }
 
@@ -393,6 +398,10 @@ div.go-dark {
   width: 30px;
   height: auto;
   cursor: pointer;
+}
+
+.go-back {
+  width: 30px;
 }
 
 .hamburger {
@@ -574,6 +583,7 @@ div.go-dark {
 #workDetail > .intro {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 #workDetail > .intro > * {
@@ -582,7 +592,7 @@ div.go-dark {
 
 #workDetail > .intro div:first-child {
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex: 1 0 40%;
 }
 
@@ -603,5 +613,9 @@ div.go-dark {
 #workDetail > .intro div:last-child >  {
   flex: 1 0 60%;
   padding: 80px;
+}
+
+#workDetail .work-imgs img{
+  width: 100%;
 }
 /* #endregion */

@@ -11,12 +11,18 @@ const initState = () => async dispatch => {
     dispatch(actions.storeSkills(skills));
 }
 
-const switchMode = mode => async dispatch  => {
+const switchMode = mode => async dispatch => {
     document.body.style.background = mode ? "#333" : "#fff";
     dispatch(actions.switchMode(mode));
 }
 
+const switchActiveSection = section => async dispatch => {
+    console.log(section)
+    dispatch(actions.switchActiveSection(section));
+}
+
 export default {
     initState,
-    switchMode
+    switchMode,
+    switchActiveSection
 };

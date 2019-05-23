@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../../css/index.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -13,26 +14,38 @@ import SwitchSection from './SwitchSection';
 class Hud extends Component {
   
   render() {
-    const { scroll, sections, darkMode, switchMode } = this.props;
+    const { scroll,small, sections, darkMode, switchMode, activeSection, switchActiveSection } = this.props;
     const trigger = 600;
     const hud = (
       <div className = "hud">
+      {this.props.small ?
+        <Link to="/">
+          <img src={require("../../assets/img/portfolio_go_back.svg")} alt="go back" class="go-back top left" />
+        </Link>
+      : null}
         <Mode darkMode={darkMode}
               switchMode={switchMode}>
         </Mode>
+        <SwitchSection trigger={trigger}
+                         scroll={scroll}
+                         switchActiveSection={switchActiveSection}
+                         activeSection={activeSection}
+                         sections={sections}
+                         small={small}
+                         >
+          </SwitchSection>
         <div className='flyout-menu'>
         </div>
 
-      {!this.props.goDown ? 
+      {!this.props.small ? 
         <React.Fragment>
           <Orientation sections={sections}
                        trigger={trigger}
-                       scroll={scroll}>
+                       scroll={scroll}
+                       switchActiveSection={switchActiveSection}
+                       activeSection={activeSection}>
           </Orientation>
           <Navigation></Navigation>
-          <SwitchSection trigger={trigger}
-                         scroll={scroll}>
-          </SwitchSection>
           <GoToTop></GoToTop>
         </React.Fragment>
       : null }
