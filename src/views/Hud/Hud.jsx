@@ -14,15 +14,10 @@ import SwitchSection from './SwitchSection';
 class Hud extends Component {
   
   render() {
-    const { scroll,small, sections, darkMode, switchMode, activeSection, switchActiveSection } = this.props;
+    const { scroll,small, sections, darkMode, switchMode, activeSection, switchActiveSection, projects } = this.props;
     const trigger = 600;
     const hud = (
       <div className = "hud">
-      {this.props.small ?
-        <Link to="/">
-          <img src={require("../../assets/img/portfolio_go_back.svg")} alt="go back" class="go-back top left" />
-        </Link>
-      : null}
         <Mode darkMode={darkMode}
               switchMode={switchMode}>
         </Mode>
@@ -31,24 +26,29 @@ class Hud extends Component {
                          switchActiveSection={switchActiveSection}
                          activeSection={activeSection}
                          sections={sections}
-                         small={small}
-                         >
-          </SwitchSection>
-        <div className='flyout-menu'>
-        </div>
+                         small={small}>
+        </SwitchSection>
 
-      {!this.props.small ? 
-        <React.Fragment>
-          <Orientation sections={sections}
-                       trigger={trigger}
-                       scroll={scroll}
-                       switchActiveSection={switchActiveSection}
-                       activeSection={activeSection}>
-          </Orientation>
-          <Navigation></Navigation>
-          <GoToTop></GoToTop>
-        </React.Fragment>
-      : null }
+        {this.props.small ?
+          <Link to="/">
+            <img src={require("../../assets/img/portfolio_go_back.svg")} alt="go back" class="go-back top left" />
+          </Link>
+        : null}
+
+        {!this.props.small ? 
+          <React.Fragment>
+
+            <Orientation sections={sections}
+                        trigger={trigger}
+                        scroll={scroll}
+                        switchActiveSection={switchActiveSection}
+                        activeSection={activeSection}>
+            </Orientation>
+            <Navigation></Navigation>
+            <GoToTop></GoToTop>
+          </React.Fragment>
+        : null }
+
       </div>
     );
     return (

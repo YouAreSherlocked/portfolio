@@ -15,7 +15,7 @@ class SwitchSection extends Component {
     }
     else {
       const i = this.props.sections.indexOf(this.props.activeSection);
-      const goTo = this.props.sections[dir == "down" ? i+1 : i-1];
+      const goTo = this.props.sections[dir === "down" ? i+1 : i-1];
       this.props.switchActiveSection(goTo);
     }
   }

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
-import { withRouter, } from 'react-router-dom';
-import { operations } from '../../redux';
 
 class Mode extends Component {
   constructor(props) {
@@ -19,7 +17,7 @@ class Mode extends Component {
     return (
       <div className="right mode" onClick={this.changeMode}>
         <div className={`mode-obj ${darkMode ? 'sun-inactive' : 'sun'}`}></div>
-        <div className="mode-seperator"></div>
+        <div className="mode-seperator line"></div>
         <div className={`mode-obj ${darkMode ? 'moon' : 'moon-inactive'}`}></div>
         <p>Go {darkMode ? "Bright" : "Dark"}</p>
       </div>
@@ -27,4 +25,4 @@ class Mode extends Component {
   };
 }
 
-export default withRouter(Mode);
+export default Mode;

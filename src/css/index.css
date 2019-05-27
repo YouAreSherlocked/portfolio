@@ -18,11 +18,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 * {
@@ -67,13 +65,17 @@ h3:after {
   margin: 8px 0 0;
 }
 
+p, h1, h2, h3, h4, h5, a, span {
+  color: inherit;
+}
+
 a:hover {
   font-weight: bold;
 }
 
 section:not(#welcome) {
   width: 80%;
-  margin: 40px auto;
+  margin: 120px auto;
 }
 
 .go-dark {
@@ -184,6 +186,28 @@ div.go-dark {
 /* #endregion */
 /* #region --- HOME */
 
+.bg-rect {
+  position: absolute;
+  background: #eee;
+  z-index: -9999999;
+}
+
+.bg-rect-one {
+  height: 1200px;
+  width: 1200px;
+  transform: rotateZ(65deg);
+  top: 1000px;
+  left: -650px;
+}
+
+.bg-rect-two {
+  height: 1200px;
+  width: 1200px;
+  transform: rotateZ(65deg);
+  top: 2600px;
+  right: -650px;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -231,21 +255,23 @@ div.go-dark {
   cursor: pointer;
 }
 /* #endregion */
-/* #region --- HEADER SMALL */
-#headerSmall {
-  width: 100%;
-  height: 50px;
-  padding: 14px;
+/* #region --- Letter */
+
+#letter p img {
+  display: block;
+  width: 140px;
+  margin: 20px 0;
 }
 
-#headerSmall img {
-  height: 100%;
-  width: auto;
+#letter p {
+  max-width: 1000px;
 }
+
+
 /* #endregion */
 /* #region --- SKILLS */
 
-#skills {
+.skills {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -258,12 +284,16 @@ div.go-dark {
   width: 246px;
   height: 246px;
   background: #eee;
-  margin: 2px;
+  margin: 8px;
+  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
 }
 
-.skill.placeholder {
-  background: #fff;
-  color: #fff;
+.skill:hover {
+  background-color: #00e683;
+  background-position: 50% 260%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+
 }
 
 .skill div {
@@ -319,6 +349,34 @@ div.go-dark {
 /* #endregion */
 /* #region --- HUD */
 
+nav {
+  background: #eee;
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  width: 400px;
+  padding: 80px;
+  z-index: 9999;
+  transform: translateX(401px);
+  transition: all .6s ease;
+}
+
+nav.open-menu {
+  transform: translateX(0);
+  transition: all .6s ease;
+}
+
+nav p:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.2);
+}
 
 .left, .center, .right, .hud {
   position: fixed;
@@ -376,7 +434,7 @@ div.go-dark {
 }
 
 .orientation > a > div.active{
-  background: #333;
+  background: #00e683;
   border: 2px solid #fff;
 }
 
@@ -408,7 +466,7 @@ div.go-dark {
   display: block;
   top: 40px;
   height: auto;
-  z-index: 506;
+  z-index: 99999;
   background: none;
   transition: top .4s ease;
   -webkit-user-select: none;
@@ -478,14 +536,12 @@ div.go-dark {
 }
 
 .mode {
-  display: flex;
   top: 140px;
   right: 25px;
   height: auto;
   width: 21px;
   cursor: pointer;
 }
-
 .mode > p {
   transform: rotate(90deg);
   position: absolute;
@@ -496,9 +552,11 @@ div.go-dark {
 }
 
 .mode-seperator {
-  border: 2px solid #333;
+  position: absolute;
+  border: 1.4px solid #333;
   width: 100%;
-  margin: 10px 0;
+  margin: 11px 0;
+  left: 10px;
 }
 
 .mode-obj {
@@ -506,8 +564,8 @@ div.go-dark {
   transition: all .6s ease;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 20px;
 }
 
 .sun {
@@ -542,9 +600,17 @@ div.go-dark {
 .work-section > .gallery > .project-card {
   display: table;
   flex: 1 0 calc(33.333% - 20px);
-  margin: 2.5px;
+  margin: 8px;
   height: 300px;
   background: #ccc;
+  box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.3);
+  transition: all .6s ease;
+}
+
+.work-section > .gallery > .project-card:hover {
+  transform: scale(1.01, 1.01);
+  transition: all .3s ease;
+  box-shadow: 0px 6px 14px 4px rgba(0,0,0,0.18);
 }
 
 .work-section > .gallery > .project-card > a {

@@ -7,19 +7,33 @@ class Navigation extends Component {
     super(props);
 
     this.state = {
-      position: 0,
-      active: ""
+      menuIsOpen: false
     }
+
+    this.openMenu = this.openMenu.bind(this);
+  }
+
+  openMenu() {
+    this.setState(prevState => ({ menuIsOpen: !prevState.menuIsOpen }));
   }
 
   render() {
+    const { menuIsOpen } = this.state;
     return (
-      <div className="right hamburger">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span> 
-      </div>
+      <React.Fragment>
+        <div className="right hamburger" onClick={this.openMenu}>
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span> 
+        </div>
+        { menuIsOpen ? <div className="menu-bg appear"></div> : null }
+        <nav className={ menuIsOpen ? "open-menu" : "" }>
+          <p>Letter</p>
+          <p>Skills</p>
+          <p>Projects</p>
+        </nav>
+      </React.Fragment>
     );
   };
 }
