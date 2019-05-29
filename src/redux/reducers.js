@@ -4,6 +4,7 @@ const initialState = {
   sections: [],
   projects: [],
   skills: [],
+  qualiprojects: [],
   darkMode: false,
   activeSection: ""
 };
@@ -18,6 +19,9 @@ const mainReducer = (state = initialState, action) => {
     }
     case types.STORE_SKILLS: {
       return { ...state, skills: action.skills };
+    }
+    case types.STORE_QUALIPROJECTS: {
+      return { ...state, qualiprojects: action.qualiprojects };
     }
     case types.SWITCH_MODE: {
       return { ...state, darkMode: action.mode };

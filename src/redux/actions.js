@@ -15,6 +15,11 @@ export const storeSkills = skills => ({
   skills: skills
 });
 
+export const storeQualiprojects = qualiprojects => ({
+  type: types.STORE_QUALIPROJECTS,
+  qualiprojects: qualiprojects
+});
+
 export const switchMode = mode => ({
   type: types.SWITCH_MODE,
   mode: mode
@@ -30,5 +35,6 @@ export default {
   storeSections,
   storeProjects,
   storeSkills,
-  switchActiveSection
+  switchActiveSection,
+  storeQualiprojects
 }

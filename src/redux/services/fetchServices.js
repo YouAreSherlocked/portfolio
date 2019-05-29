@@ -1,8 +1,8 @@
 export const sections = [
+   'Programming',
    'Graphic Design', 
    'Illustrations', 
-   'Photography', 
-   'Programming'
+   'Photography'
 ];
 
 export const technologies = [
@@ -25,7 +25,7 @@ export const technologies = [
 
 export const projects = [
   {
-    category: sections[0],
+    category: sections[1],
     title: "Mirayon",
     description: "Description of test1",
     technologies: [
@@ -45,7 +45,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[0],
+    category: sections[1],
     title: "JG Genesis",
     description: "Description of test1",
     technologies: [
@@ -66,7 +66,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[0],
+    category: sections[1],
     title: "Custodigit",
     description: "Description of test1",
     technologies: [
@@ -88,7 +88,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[1],
+    category: sections[2],
     title: "1 Day Designer Challenge",
     description: "Description of test1",
     technologies: [
@@ -108,7 +108,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[1],
+    category: sections[2],
     title: "JG Genesis",
     description: "Description of test1",
     technologies: [
@@ -129,7 +129,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[1],
+    category: sections[2],
     title: "Apps Team",
     description: "Description of test1",
     technologies: [
@@ -150,7 +150,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[3],
+    category: sections[0],
     title: "Zoom",
     description: "Description of test1",
     technologies: [
@@ -170,7 +170,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[3],
+    category: sections[0],
     title: "Digital Business Carreer",
     description: "Description of test1",
     technologies: [
@@ -191,7 +191,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[3],
+    category: sections[0],
     title: "Fit Adviser",
     inProgress: true,
     description: "Description of test1",
@@ -207,7 +207,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[3],
+    category: sections[0],
     title: "Portfolio",
     description: "Description of test1",
     technologies: [
@@ -227,6 +227,98 @@ export const projects = [
       }
     ]
   }
+];
+
+export const qualiprojects = [
+  {
+    title: "First Steps",
+    start: new Date(2017, 8),
+    end: new Date(2017, 8),
+    description: [
+      "Einführung der Abläufe in der Swisscom",
+      "Basis Software",
+      "Einrichtung der Geräte",
+      "Kennenlernen LB"
+    ],
+    qpa: {
+      name: "Andreas Mast",
+      link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTBIMAA00"
+    }
+  },
+  {
+    title: "CRM Monitor",
+    start: new Date(2017, 8),
+    end: new Date(2018, 2),
+    description: [
+      "Unterhalt & Weiterentwicklung Webapplikation",
+      "C#, Asp.Net, MySQL, Javascript",
+      "Bereitstellung von Daten",
+      "Datenbank Pflegung"
+    ],
+    qpa: {
+      name: "Alexander Papst",
+      link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTGDPAAL4"
+    }
+  },
+  {
+    title: "Medienkurse",
+    start: new Date(2018, 2),
+    end: new Date(2018, 8),
+    description: [
+      "Entwicklung & Projektleitung Webapplikation",
+      "C#, Asp.Net, MySQL, Javascript",
+      "Produktivsetzung der Applikation",
+      "Unterstützung und Übernahme Projektleitung"
+    ],
+    qpa: {
+      name: "Jürg Müller",
+      link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTAAMUJU1"
+    }
+  },
+  {
+    title: "Designer Apps Team",
+    start: new Date(2018, 8),
+    end: new Date(2019, 1),
+    description: [
+      "Webdesign",
+      "Gesamtauftritt des Start Ups Custodigit",
+      "Digital- und Printdesigns",
+      "2/2 Gewinner interner Design Challenge"
+    ],
+    qpa: {
+      name: "John Riordan",
+      link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTAARIJO1"
+    }
+  },
+  {
+    title: "Frontend Apps Team",
+    start: new Date(2019, 2),
+    end: new Date(2019, 7),
+    description: [
+      "Umsetzung Frontend diverser Webapplikationen",
+      "React Js & Redux",
+      "Vue Js"
+    ],
+    qpa: {
+      name: "John Riordan",
+      link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTAARIJO1"
+    }
+  },
+  {
+    title: "...new Project",
+    start: new Date(2019, 8),
+    end: new Date(2020, 2),
+    description: [
+      "Einführung der Abläufe in der Swisscom",
+      "Basis Software",
+      "Einrichtung der Geräte",
+      "Kennenlernen LB"
+    ],
+    qpa: {
+      name: "...",
+      link: "..."
+    }
+  },
 ];
 
 export const skills = [

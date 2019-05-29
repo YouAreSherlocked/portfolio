@@ -31,7 +31,7 @@ class Letter extends Component {
           zu lernen. Wenn dich das auch freuen würde schick doch kurz dieses Mail ab um ein Datum abzumachen.
           <br></br><br></br>
           Freundliche Grüsse<br></br>
-          <img className="signature" src={require('../../assets/img/signature.png')} />
+          <img className="signature" src={require('../../assets/img/signature.png')} alt="siganture" />
           Timo Mayer<br></br>
           Lernender Informatiker<br></br>
           Applikationsentwicklung 2. Lehrjahr

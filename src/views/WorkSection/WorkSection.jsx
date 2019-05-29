@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../../css/index.css';
 
 class WorkSection extends Component {
@@ -33,4 +33,4 @@ class WorkSection extends Component {
   };
 }
 
-export default withRouter(WorkSection);
+export default WorkSection;

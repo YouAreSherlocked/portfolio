@@ -8,6 +8,7 @@ import Welcome from '../welcome/Welcome';
 import Work from '../Work/Work';
 import Skills from '../Skills/Skills';
 import Letter from '../Letter/Letter';
+import QualiProjects from '../QualiProjects/QualiProjects';
 
 class Home extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Home extends Component {
   }
 
   render() {
-    const { skills, sections, projects } = this.props;
+    const { skills, sections, projects, qualiprojects } = this.props;
     return (
       this.state.isLoading ? 
         <div>Loading Data :)</div>
@@ -49,6 +50,7 @@ class Home extends Component {
           </div>*/}
           <Letter title="Projekt Titel und OE" name="Vorname"></Letter>
           <Skills skills={skills}></Skills>
+          <QualiProjects qualiprojects={qualiprojects}></QualiProjects>
           <Work sections={sections} projects={projects} />
         </React.Fragment>
     );
@@ -59,7 +61,8 @@ const mapStateToProps = state => ({
   dark: selectors.getMode(state.mainState),
   sections: selectors.getSections(state.mainState),
   projects: selectors.getProjects(state.mainState),
-  skills: selectors.getSkills(state.mainState)
+  skills: selectors.getSkills(state.mainState),
+  qualiprojects: selectors.getQualiprojects(state.mainState)
 });
 
 const mapDispatchToProps = (dispatch) => {

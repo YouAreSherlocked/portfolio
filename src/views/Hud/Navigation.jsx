@@ -22,7 +22,7 @@ class Navigation extends Component {
     return (
       <React.Fragment>
         <div className="right hamburger" onClick={this.openMenu}>
-          <input type="checkbox" checked={menuIsOpen} />
+          <input type="checkbox" checked={menuIsOpen} readOnly/>
           <span></span>
           <span></span>
           <span></span> 
