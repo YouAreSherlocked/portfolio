@@ -7,7 +7,9 @@ class Letter extends Component {
       <section id="letter">
         <p>
           Bewerbung für das Projekt<br></br>
-          <h4>{title}</h4><br></br>
+        </p>
+        <h4>{title}</h4><br></br>
+        <p>
           Hallo {name}<br></br>
           <br></br>
           Ich will bei euch arbeiten.<br></br>
@@ -29,7 +31,7 @@ class Letter extends Component {
           zu lernen. Wenn dich das auch freuen würde schick doch kurz dieses Mail ab um ein Datum abzumachen.
           <br></br><br></br>
           Freundliche Grüsse<br></br>
-          <img class="signature" src={require('../../assets/img/signature.png')} />
+          <img className="signature" src={require('../../assets/img/signature.png')} />
           Timo Mayer<br></br>
           Lernender Informatiker<br></br>
           Applikationsentwicklung 2. Lehrjahr

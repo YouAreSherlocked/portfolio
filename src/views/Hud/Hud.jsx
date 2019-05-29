@@ -14,12 +14,14 @@ import SwitchSection from './SwitchSection';
 class Hud extends Component {
   
   render() {
-    const { scroll,small, sections, darkMode, switchMode, activeSection, switchActiveSection, projects } = this.props;
+    const { scroll, small, sections, darkMode, switchMode, activeSection, switchActiveSection } = this.props;
     const trigger = 600;
     const hud = (
       <div className = "hud">
         <Mode darkMode={darkMode}
-              switchMode={switchMode}>
+              switchMode={switchMode}
+              scroll={scroll}
+              trigger={trigger}>
         </Mode>
         <SwitchSection trigger={trigger}
                          scroll={scroll}
@@ -31,7 +33,7 @@ class Hud extends Component {
 
         {this.props.small ?
           <Link to="/">
-            <img src={require("../../assets/img/portfolio_go_back.svg")} alt="go back" class="go-back top left" />
+            <img src={require("../../assets/img/portfolio_go_back.svg")} alt="go back" className="go-back top left" />
           </Link>
         : null}
 
@@ -45,7 +47,9 @@ class Hud extends Component {
                         activeSection={activeSection}>
             </Orientation>
             <Navigation></Navigation>
-            <GoToTop></GoToTop>
+            <GoToTop scroll={scroll}
+                     trigger={trigger}>
+            </GoToTop>
           </React.Fragment>
         : null }
 

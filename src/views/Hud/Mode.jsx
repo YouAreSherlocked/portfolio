@@ -13,14 +13,16 @@ class Mode extends Component {
   }
 
   render() {
-    const { darkMode } = this.props;
+    const { darkMode, scroll, trigger } = this.props;
     return (
-      <div className="right mode" onClick={this.changeMode}>
-        <div className={`mode-obj ${darkMode ? 'sun-inactive' : 'sun'}`}></div>
-        <div className="mode-seperator line"></div>
-        <div className={`mode-obj ${darkMode ? 'moon' : 'moon-inactive'}`}></div>
-        <p>Go {darkMode ? "Bright" : "Dark"}</p>
-      </div>
+      scroll > trigger ?
+        <div className="right mode appear" onClick={this.changeMode}>
+          <div className={`mode-obj ${darkMode ? 'sun-inactive' : 'sun'}`}></div>
+          <div className="mode-seperator line"></div>
+          <div className={`mode-obj ${darkMode ? 'moon' : 'moon-inactive'}`}></div>
+          <p>Go {darkMode ? "Bright" : "Dark"}</p>
+        </div>
+      : null
     );
   };
 }

@@ -22,16 +22,16 @@ class Navigation extends Component {
     return (
       <React.Fragment>
         <div className="right hamburger" onClick={this.openMenu}>
-          <input type="checkbox" />
+          <input type="checkbox" checked={menuIsOpen} />
           <span></span>
           <span></span>
           <span></span> 
         </div>
-        { menuIsOpen ? <div className="menu-bg appear"></div> : null }
+        { menuIsOpen ? <div className="menu-bg appear" onClick={this.openMenu}></div> : null }
         <nav className={ menuIsOpen ? "open-menu" : "" }>
-          <p>Letter</p>
-          <p>Skills</p>
-          <p>Projects</p>
+          <a href="#letter">Letter</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
         </nav>
       </React.Fragment>
     );

@@ -5,77 +5,226 @@ export const sections = [
    'Programming'
 ];
 
+export const technologies = [
+  'Adobe Illustrator', 
+  'Adobe InDesign', 
+  'Adobe Photoshop', 
+  'Adobe After Effects',
+  'After Premiere Pro',
+  'Adobe Lightroom',
+  'Adobe XD',
+  'React Js',
+  'Vue Js',
+  'Plain Java Script',
+  'Asp.Net',
+  'Laravel',
+  'PHP',
+  'Redux'
+];
+
+
 export const projects = [
   {
-    id: 0,
-    title: "test1",
+    category: sections[0],
+    title: "Mirayon",
     description: "Description of test1",
-    image: require("../../assets/img/Photography/ee.jpg"),
+    technologies: [
+      technologies[0]
+    ],
+    image: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_4ways.jpg"),
+    thumbnail: require("../../assets/img/Graphic Design/mirayon/thumbnail.jpg"),
     imgs: [
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg")
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+      }  
     ]
   },
   {
-    id: 1,
-    title: "test2",
-    description: "Description of test2",
-    image: require("../../assets/img/Photography/ee.jpg"),
+    category: sections[0],
+    title: "JG Genesis",
+    description: "Description of test1",
+    technologies: [
+      technologies[1],
+      technologies[2]
+    ],
+    image: require("../../assets/img/Graphic Design/genesis/sledgecamp_flyer_19.jpg"),
+    thumbnail: require("../../assets/img/Graphic Design/genesis/sledgecamp_flyer_19_illu.jpg"),
     imgs: [
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg")
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+      }
     ]
   },
   {
-    id: 2,
-    title: "test3",
-    description: "Description of test3",
-    image: require("../../assets/img/Photography/ee.jpg"),
+    category: sections[0],
+    title: "Custodigit",
+    description: "Description of test1",
+    technologies: [
+      technologies[0],
+      technologies[1],
+      technologies[6]
+    ],
+    image: require("../../assets/img/Graphic Design/genesis/sledgecamp_flyer_19.jpg"),
+    thumbnail: require("../../assets/img/Graphic Design/custodigit/thumbnail.jpg"),
     imgs: [
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg")
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+      }
     ]
   },
   {
-    id: 3,
-    title: "test4",
-    description: "Description of test4",
-    image: require("../../assets/img/Photography/ee.jpg"),
+    category: sections[1],
+    title: "1 Day Designer Challenge",
+    description: "Description of test1",
+    technologies: [
+      technologies[2]
+    ],
+    image: require("../../assets/img/Illustrations/designerchallenge/illustration_small.jpg"),
+    thumbnail: require("../../assets/img/Illustrations/designerchallenge/illustration_small.jpg"),
     imgs: [
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg")
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+      }
     ]
   },
   {
-    id: 4,
-    title: "test5",
-    description: "Description of test5",
-    image: require("../../assets/img/Photography/ee.jpg"),
+    category: sections[1],
+    title: "JG Genesis",
+    description: "Description of test1",
+    technologies: [
+      technologies[0],
+      technologies[2]
+    ],
+    image: require("../../assets/img/Illustrations/genesis/thumbnail.jpg"),
+    thumbnail: require("../../assets/img/Illustrations/genesis/thumbnail.jpg"),
     imgs: [
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg")
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+      }
     ]
   },
   {
-    id: 5,
-    title: "test6",
-    description: "Description of test6",
-    image: require("../../assets/img/Photography/ee.jpg"),
+    category: sections[1],
+    title: "Apps Team",
+    description: "Description of test1",
+    technologies: [
+      technologies[1],
+      technologies[2]
+    ],
+    image: require("../../assets/img/Illustrations/appsteam/apps_team_comic1_1.jpg"),
+    thumbnail: require("../../assets/img/Illustrations/appsteam/thumbnail.jpg"),
     imgs: [
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg"),
-      require("../../assets/img/Photography/ee.jpg")
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+      }
+    ]
+  },
+  {
+    category: sections[3],
+    title: "Zoom",
+    description: "Description of test1",
+    technologies: [
+      technologies[9]
+    ],
+    image: require("../../assets/img/programming/zoom.jpg"),
+    thumbnail: require("../../assets/img/programming/zoom.jpg"),
+    imgs: [
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+      }
+    ]
+  },
+  {
+    category: sections[3],
+    title: "Digital Business Carreer",
+    description: "Description of test1",
+    technologies: [
+      technologies[8],
+      technologies[14]
+    ],
+    image: require("../../assets/img/programming/dbc.jpg"),
+    thumbnail: require("../../assets/img/programming/dbc.jpg"),
+    imgs: [
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+      }
+    ]
+  },
+  {
+    category: sections[3],
+    title: "Fit Adviser",
+    inProgress: true,
+    description: "Description of test1",
+    technologies: [
+      technologies[10],
+      technologies[12],
+      technologies[13]
+    ],
+    image: require("../../assets/img/programming/fitadviser.jpg"),
+    thumbnail: require("../../assets/img/programming/fitadviser.jpg"),
+    imgs: [
+      
+    ]
+  },
+  {
+    category: sections[3],
+    title: "Portfolio",
+    description: "Description of test1",
+    technologies: [
+      technologies[8],
+      technologies[14]
+    ],
+    image: require("../../assets/img/programming/portfolio.jpg"),
+    thumbnail: require("../../assets/img/programming/portfolio.jpg"),
+    imgs: [
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+      }
     ]
   }
 ];

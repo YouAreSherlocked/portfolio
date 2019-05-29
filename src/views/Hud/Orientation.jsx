@@ -35,8 +35,8 @@ class Orientation extends Component {
            key={section} 
            onMouseOver={() => this.showTitle(section)} 
            onMouseOut={this.hideTitle}>
+           <p className={this.state.active === section ? "active appear-from-right" : ""}>{section}</p>
           <div className={this.state.active === section ? "active" : ""}></div>
-          <p className={this.state.active === section ? "active appear-from-left" : ""}>{section}</p>
         </a>
       ))
     );
@@ -70,10 +70,10 @@ class Orientation extends Component {
   }
 
   showTitle(e) {
+    //this.props.switchActiveSection(e);
     this.setState({
       active: e
     });
-    this.props.switchActiveSection(e);
   }
 
   hideTitle() {
@@ -86,9 +86,9 @@ class Orientation extends Component {
     const { scroll, trigger } = this.props;
     return (
       scroll > trigger ? 
-        <div className="left orientation appear">
-          <div className="line"></div>
-          {this.createPoints()}
+        <div className="right orientation appear">
+        {this.createPoints()}
+        <div className="orientation-line"></div>
         </div>
       : null
     );

@@ -3,20 +3,21 @@ import { withRouter, Link } from 'react-router-dom';
 import '../../css/index.css';
 
 class WorkSection extends Component {
+
   createProjectCards(projects) {
-    const cards = projects.map((project, i) => (
-      <div className="project-card" key={i} style={{backgroundImage: "url(" + project.image + ")"}}>
-        <Link to={{
-          pathname: `/detail/${project.title}`,
-          state: {project}
-        }} project={project}>
-          <p>{project.title}</p>
-        </Link>
-      </div>
+    return projects.map((project, i) => (
+      project.category === this.props.title ?
+        <div className="project-card" key={i} style={{backgroundImage: "url(" + project.thumbnail + ")"}}>
+          <Link to={{
+            pathname: `/detail/${project.title}`,
+            state: {project}
+          }} project={project}>
+            {project.title}
+            { project.inProgress ? <h2>In Progress</h2> : null }
+          </Link>
+        </div>
+      : null
     ));
-    return (
-      cards
-    );
   }
 
   render() {

@@ -39,14 +39,14 @@ class Home extends Component {
         <div>Loading Data :)</div>
       :
         <React.Fragment>
-          <div className="bg-rect bg-rect-one"></div>
-          <div className="bg-rect bg-rect-two"></div>
           <Hud scroll={this.state.scrollPos}/>
           <Welcome></Welcome>
-          <div className='intro'>
+          {/*<div className="bg-rect bg-rect-one"></div>
+            <div className="bg-rect bg-rect-two"></div>
+            <div className='intro'>
             <h2>Opening</h2>
             <p className='intro-text'>Lorem Ipsum Lorem Ipsum Lore Ipsum Lorem Ipsum</p>
-          </div>
+          </div>*/}
           <Letter title="Projekt Titel und OE" name="Vorname"></Letter>
           <Skills skills={skills}></Skills>
           <Work sections={sections} projects={projects} />

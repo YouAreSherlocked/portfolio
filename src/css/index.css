@@ -40,7 +40,8 @@ body {
 }
 
 h1 {
-  font-size: 20px;
+  text-transform: uppercase;
+  font-size: 80px;
   cursor: pointer;
 }
 
@@ -63,6 +64,10 @@ h3:after {
   height: 4px;
   background: #333;
   margin: 8px 0 0;
+}
+
+h5 {
+  margin-bottom: 4px;
 }
 
 p, h1, h2, h3, h4, h5, a, span {
@@ -130,14 +135,45 @@ div.go-dark {
   }
 }
 
+.appear-from-right {
+  animation: fadeInFromRight .8s;
+}
+
+@keyframes fadeInFromRight {
+  from { 
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 /* #endregion */
 /* #region --- WELCOME */
 
 #welcome {
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-#welcome > * {
+
+#welcome * {
+  text-align: center;
+}
+
+#welcome > a > h1 {
+  background: #eee;
+  display: block;
+  width: 600px;
+  margin: 0 auto 20px;
+  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+}
+
+/*#welcome > * {
   height: 100%;
   width: 50%;
   padding: 30px 20px;
@@ -181,7 +217,7 @@ div.go-dark {
 
 #welcome div:last-child > h2 {
   text-align: left;
-}
+}*/
 
 /* #endregion */
 /* #region --- HOME */
@@ -271,10 +307,13 @@ div.go-dark {
 /* #endregion */
 /* #region --- SKILLS */
 
+
 .skills {
+  margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 .skill {
@@ -365,6 +404,11 @@ nav.open-menu {
   transform: translateX(0);
   transition: all .6s ease;
 }
+nav a {
+  display: block;
+  margin-bottom: 40px;
+  height: auto;
+}
 
 nav p:hover {
   font-weight: 600;
@@ -405,15 +449,26 @@ nav p:hover {
 .orientation {
   width: auto;
   height: auto;
-  top: 50%;
+  top: 32%;
+  right: 30px;
 }
 
 .line {
   position: absolute;
   top: 50%;
-  left: 6.5px;
+  right: 3.6px;
   transform: translate(-50%, -50%);
-  height: 80%;
+  width: 3px;
+  background: #333;
+  z-index: -1;
+}
+
+.orientation-line {
+  position: absolute;
+  top: 50%;
+  right: 3.5px;
+  transform: translate(-50%, -50%);
+  height: 78%;
   width: 3px;
   background: #333;
   z-index: -1;
@@ -422,6 +477,7 @@ nav p:hover {
 .orientation > a  {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .orientation > a > div:not(.line) {
@@ -439,7 +495,8 @@ nav p:hover {
 }
 
 .orientation > a > p  {
-  padding-left: 20px;
+  padding-right: 20px;
+  text-align: right;
   width: auto;
   visibility: hidden;
 }
@@ -599,18 +656,25 @@ nav p:hover {
 
 .work-section > .gallery > .project-card {
   display: table;
-  flex: 1 0 calc(33.333% - 20px);
+  flex: 0 0 calc(33.333% - 20px);
   margin: 8px;
   height: 300px;
-  background: #ccc;
   box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.3);
   transition: all .6s ease;
+  background-color: #ccc;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(0,0,0,0);
 }
 
 .work-section > .gallery > .project-card:hover {
   transform: scale(1.01, 1.01);
   transition: all .3s ease;
   box-shadow: 0px 6px 14px 4px rgba(0,0,0,0.18);
+  background-image: none !important;
+  background-color: #00e683;
+  color: #fff;
 }
 
 .work-section > .gallery > .project-card > a {
@@ -666,6 +730,7 @@ nav p:hover {
   width: 100%;
   height: auto;
   margin: auto;
+  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
 }
 
 #workDetail > .intro div:last-child {
@@ -681,7 +746,20 @@ nav p:hover {
   padding: 80px;
 }
 
-#workDetail .work-imgs img{
-  width: 100%;
+#workDetail .work-imgs img {
+  width: 60%;
+  margin: 60px auto 0;
+  display: block;
 }
+
+#workDetail .work-imgs p {
+  width: 60%;
+  margin: 40px auto 120px;
+  display: block;
+}
+
+#workDetail .work-imgs hr {
+  width: 60%;
+}
+
 /* #endregion */
