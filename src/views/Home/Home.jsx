@@ -9,20 +9,30 @@ import Work from '../Work/Work';
 import Skills from '../Skills/Skills';
 import Letter from '../Letter/Letter';
 import QualiProjects from '../QualiProjects/QualiProjects';
+import Login from '../Login/Login';
+
+const crypto = require("crypto");
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      isAuthenticated: false,
       isLoading: true,
       scrollPos: 0
     }
 
     this.handleScroll = this.handleScroll.bind(this);
+    this.checkAuth = this.checkAuth.bind(this);
   }
 
   async componentDidMount() {
+    if (localStorage.getItem("auth") === this.sha1(password)) {
+      this.setState({
+        isAuthenticated: true
+      })
+    }
     window.addEventListener('scroll', this.handleScroll);
     this.setState({isLoading: true});
     await this.props.initState();
@@ -33,9 +43,25 @@ class Home extends Component {
     this.setState({scrollPos: window.pageYOffset})
   }
 
+  sha1(data) {
+    return crypto.createHash("sha1").update(data, "binary").digest("hex");
+  }
+
+  checkAuth(input) {
+    if (input === password) {
+      this.setState({
+        isAuthenticated: true
+      })
+      localStorage.setItem("auth", this.sha1(password));
+    }
+  }
+
   render() {
     const { skills, sections, projects, qualiprojects } = this.props;
     return (
+      !this.state.isAuthenticated ? 
+        <Login checkAuth={this.checkAuth}></Login>
+      :
       this.state.isLoading ? 
         <div>Loading Data :)</div>
       :
@@ -65,10 +91,11 @@ const mapStateToProps = state => ({
   qualiprojects: selectors.getQualiprojects(state.mainState)
 });
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return bindActionCreators({
     initState: operations.initState
   }, dispatch);
 };
 
+const password = "test";
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
