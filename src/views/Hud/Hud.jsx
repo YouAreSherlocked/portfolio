@@ -46,7 +46,7 @@ class Hud extends Component {
                         switchActiveSection={switchActiveSection}
                         activeSection={activeSection}>
             </Orientation>
-            <Navigation></Navigation>
+            <Navigation sections={sections}></Navigation>
             <GoToTop scroll={scroll}
                      trigger={trigger}>
             </GoToTop>

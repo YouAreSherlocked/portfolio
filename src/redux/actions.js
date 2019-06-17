@@ -5,6 +5,11 @@ export const storeSections = sections => ({
   sections: sections
 });
 
+export const storeWorkSections = workSections => ({
+  type: types.STORE_WORKSECTIONS,
+  workSections: workSections
+});
+
 export const storeProjects = projects => ({
   type: types.STORE_PROJECTS,
   projects: projects
@@ -33,6 +38,7 @@ export const switchActiveSection = section => ({
 export default {
   switchMode,
   storeSections,
+  storeWorkSections,
   storeProjects,
   storeSkills,
   switchActiveSection,

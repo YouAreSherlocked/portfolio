@@ -3,11 +3,13 @@ import * as fetch from './services/fetchServices';
 
 const initState = () => async dispatch => {
     const sections = await fetch.sections;
+    const workSections = await fetch.workSections;
     const projects = await fetch.projects;
     const qualiprojects = await fetch.qualiprojects;
     const skills = await fetch.skills;
 
     dispatch(actions.storeSections(sections));
+    dispatch(actions.storeWorkSections(workSections));
     dispatch(actions.storeProjects(projects));
     dispatch(actions.storeQualiprojects(qualiprojects));
     dispatch(actions.storeSkills(skills));

@@ -10,10 +10,10 @@ class Navigation extends Component {
       menuIsOpen: false
     }
 
-    this.openMenu = this.openMenu.bind(this);
+    this.changeMenuState = this.changeMenuState.bind(this);
   }
 
-  openMenu() {
+  changeMenuState() {
     this.setState(prevState => ({ menuIsOpen: !prevState.menuIsOpen }));
   }
 
@@ -21,17 +21,19 @@ class Navigation extends Component {
     const { menuIsOpen } = this.state;
     return (
       <React.Fragment>
-        <div className="right hamburger" onClick={this.openMenu}>
+        <div className="right hamburger" onClick={this.changeMenuState}>
           <input type="checkbox" checked={menuIsOpen} readOnly/>
           <span></span>
           <span></span>
           <span></span> 
         </div>
-        { menuIsOpen ? <div className="menu-bg appear" onClick={this.openMenu}></div> : null }
+        { menuIsOpen ? <div className="menu-bg appear" onClick={this.changeMenuState}></div> : null }
         <nav className={ menuIsOpen ? "open-menu" : "" }>
-          <a href="#letter">Letter</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
+          {
+            this.props.sections.map((section, i) => (
+              <a href={"#" + section.toLowerCase().replace(" ", "")} key={i} onClick={this.changeMenuState}>{section}</a>
+            ))
+          }
         </nav>
       </React.Fragment>
     );

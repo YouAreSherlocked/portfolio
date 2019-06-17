@@ -2,6 +2,7 @@ import types from './types';
 
 const initialState = {
   sections: [],
+  workSections: [],
   projects: [],
   skills: [],
   qualiprojects: [],
@@ -13,6 +14,9 @@ const mainReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.STORE_SECTIONS: {
       return { ...state, sections: action.sections };
+    }
+    case types.STORE_WORKSECTIONS: {
+      return { ...state, workSections: action.workSections };
     }
     case types.STORE_PROJECTS: {
       return { ...state, projects: action.projects };

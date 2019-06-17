@@ -25,7 +25,9 @@ class WorkDetail extends Component {
               <h3>{project.title}</h3>
               <p>{project.inProgress ? "Project is currently in Progress" : project.description}</p>
               <h5>Technologies</h5>
-              <p>{project.technologies[0]}</p>
+              { project.technologies.map((tech, i) => (
+                <p>{tech}</p>
+              )) }
             </div>
           </div>
           { imgs.length !== 0 ? 

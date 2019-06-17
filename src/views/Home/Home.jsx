@@ -57,7 +57,7 @@ class Home extends Component {
   }
 
   render() {
-    const { skills, sections, projects, qualiprojects } = this.props;
+    const { skills, workSections, projects, qualiprojects } = this.props;
     return (
       !this.state.isAuthenticated ? 
         <Login checkAuth={this.checkAuth}></Login>
@@ -68,16 +68,10 @@ class Home extends Component {
         <React.Fragment>
           <Hud scroll={this.state.scrollPos}/>
           <Welcome></Welcome>
-          {/*<div className="bg-rect bg-rect-one"></div>
-            <div className="bg-rect bg-rect-two"></div>
-            <div className='intro'>
-            <h2>Opening</h2>
-            <p className='intro-text'>Lorem Ipsum Lorem Ipsum Lore Ipsum Lorem Ipsum</p>
-          </div>*/}
           <Letter title="Projekt Titel und OE" name="Vorname"></Letter>
           <Skills skills={skills}></Skills>
           <QualiProjects qualiprojects={qualiprojects}></QualiProjects>
-          <Work sections={sections} projects={projects} />
+          <Work workSections={workSections} projects={projects} />
         </React.Fragment>
     );
   };
@@ -85,7 +79,7 @@ class Home extends Component {
 
 const mapStateToProps = state => ({
   dark: selectors.getMode(state.mainState),
-  sections: selectors.getSections(state.mainState),
+  workSections: selectors.getWorkSections(state.mainState),
   projects: selectors.getProjects(state.mainState),
   skills: selectors.getSkills(state.mainState),
   qualiprojects: selectors.getQualiprojects(state.mainState)

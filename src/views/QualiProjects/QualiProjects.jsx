@@ -5,38 +5,24 @@ class QualiProject extends Component {
 
   render() {
     const projects = this.props.qualiprojects.map((project, i) => (
-        <tr key={i}>
-          <td>{ project.title }</td>
-          <td>
-            <ul>
+      <div className="quader-card quader-card-big qualiproject" key={i} >
+          <h4>{project.title}</h4>
+          <ul>
               { project.description.map((point, i) => (
-                <li>{ point }</li>
+                <li key={i}>{ point }</li>
               )) }
             </ul>
-          </td>
-          <td><a href={project.qpa.link}>{ project.qpa.name }</a></td>
-          <td>{ project.start.toLocaleDateString("en-US", dateOptions) }</td>
-          <td>{ project.end.toLocaleDateString("en-US", dateOptions) }</td>
-        </tr>
+          <p><b>QPA</b> <a href={project.qpa.link}>{ project.qpa.name }</a></p>
+          <p><b>Start</b> { project.start.toLocaleDateString("en-US", dateOptions) }</p>
+          <p><b>End</b> { project.end.toLocaleDateString("en-US", dateOptions) }</p>
+      </div>
     ));
-    const { qualiprojects } = this.props;
     return (
-      <section id="quali-projects">
+      <section id="qualiprojects">
         <h3>Qualiprojects</h3>
-        <table className="quali-projects-table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>QPA</th>
-              <th>Start</th>
-              <th>End</th>
-            </tr>
-          </thead>
-          <tbody>
-            { projects }
-          </tbody>
-        </table>
+        <div className="quali-projects">
+          {projects}
+        </div>
       </section>
     );
   }

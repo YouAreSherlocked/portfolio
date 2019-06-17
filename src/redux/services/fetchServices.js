@@ -1,8 +1,18 @@
 export const sections = [
+   'Letter',
+   'Skills',
+   'Qualiprojects',
    'Programming',
    'Graphic Design', 
    'Illustrations', 
    'Photography'
+];
+
+export const workSections = [
+  'Programming',
+  'Graphic Design', 
+  'Illustrations', 
+  'Photography'
 ];
 
 export const technologies = [
@@ -15,7 +25,7 @@ export const technologies = [
   'Adobe XD',
   'React Js',
   'Vue Js',
-  'Plain Java Script',
+  'Javascript',
   'Asp.Net',
   'Laravel',
   'PHP',
@@ -25,7 +35,7 @@ export const technologies = [
 
 export const projects = [
   {
-    category: sections[1],
+    category: workSections[1],
     title: "Mirayon",
     description: "Description of test1",
     technologies: [
@@ -45,7 +55,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[1],
+    category: workSections[1],
     title: "JG Genesis",
     description: "Description of test1",
     technologies: [
@@ -66,7 +76,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[1],
+    category: workSections[1],
     title: "Custodigit",
     description: "Description of test1",
     technologies: [
@@ -88,7 +98,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[2],
+    category: workSections[2],
     title: "1 Day Designer Challenge",
     description: "Description of test1",
     technologies: [
@@ -108,7 +118,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[2],
+    category: workSections[2],
     title: "JG Genesis",
     description: "Description of test1",
     technologies: [
@@ -129,7 +139,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[2],
+    category: workSections[2],
     title: "Apps Team",
     description: "Description of test1",
     technologies: [
@@ -150,7 +160,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[0],
+    category: workSections[0],
     title: "Zoom",
     description: "Description of test1",
     technologies: [
@@ -170,7 +180,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[0],
+    category: workSections[0],
     title: "Digital Business Carreer",
     description: "Description of test1",
     technologies: [
@@ -191,12 +201,12 @@ export const projects = [
     ]
   },
   {
-    category: sections[0],
+    category: workSections[0],
     title: "Fit Adviser",
     inProgress: true,
     description: "Description of test1",
     technologies: [
-      technologies[10],
+      technologies[9],
       technologies[12],
       technologies[13]
     ],
@@ -207,7 +217,7 @@ export const projects = [
     ]
   },
   {
-    category: sections[0],
+    category: workSections[0],
     title: "Portfolio",
     description: "Description of test1",
     technologies: [
@@ -267,8 +277,7 @@ export const qualiprojects = [
     description: [
       "Entwicklung & Projektleitung Webapplikation",
       "C#, Asp.Net, MySQL, Javascript",
-      "Produktivsetzung der Applikation",
-      "Unterstützung und Übernahme Projektleitung"
+      "Produktivsetzung der Applikation"
     ],
     qpa: {
       name: "Jürg Müller",
@@ -281,7 +290,7 @@ export const qualiprojects = [
     end: new Date(2019, 1),
     description: [
       "Webdesign",
-      "Gesamtauftritt des Start Ups Custodigit",
+      "Gesamtauftritt Custodigit",
       "Digital- und Printdesigns",
       "2/2 Gewinner interner Design Challenge"
     ],
