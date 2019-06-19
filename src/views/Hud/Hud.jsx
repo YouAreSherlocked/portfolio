@@ -11,14 +11,22 @@ import Navigation from './Navigation';
 import GoToTop from './GoToTop';
 import SwitchSection from './SwitchSection';
 
+const arrowDark = require("../../assets/img/portfolio_go_back.svg");
+const arrowBright = require("../../assets/img/portfolio_go_back_white.svg");
+
 class Hud extends Component {
 
   render() {
     const { scroll, small, sections, darkMode, switchMode, activeSection, switchActiveSection } = this.props;
     const trigger = 800;
     const hud = (
+      small ?
+        <Link to="/">
+          <img src={ darkMode ? arrowBright : arrowDark} alt="go back" className="go-back top left" />
+        </Link>
+      : 
       scroll > trigger ?
-      <div className = "hud appear">
+      <div className="hud appear">
         <Mode darkMode={darkMode} switchMode={switchMode}></Mode>
       {/*<SwitchSection 
                         scroll={scroll}
@@ -28,24 +36,20 @@ class Hud extends Component {
                         small={small}>
           </SwitchSection>*/}
 
-        {this.props.small ?
-          <Link to="/">
-            <img src={require("../../assets/img/portfolio_go_back.svg")} alt="go back" className="go-back top left" />
-          </Link>
-        : null}
+        
 
-        {!this.props.small ? 
+        {!small ? 
           <React.Fragment>
 
             <Orientation sections={sections}
-                        scroll={scroll}
-                        switchActiveSection={switchActiveSection}
-                        activeSection={activeSection}>
+                         scroll={scroll}
+                         switchActiveSection={switchActiveSection}
+                         activeSection={activeSection}>
             </Orientation>
             <Navigation sections={sections} scroll={scroll}></Navigation>
-            <GoToTop></GoToTop>
+            <GoToTop darkMode={darkMode}></GoToTop>
           </React.Fragment>
-        : null }
+        : null}
 
       </div>
       : null
@@ -66,7 +70,7 @@ const mapStateToProps = state => ({
   activeSection: selectors.getActiveSection(state.mainState)
 });
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return bindActionCreators({
     initState: operations.initState,
     switchMode: operations.switchMode,

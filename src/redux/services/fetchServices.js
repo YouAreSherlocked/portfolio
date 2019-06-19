@@ -77,7 +77,7 @@ export const projects = [
   },
   {
     category: workSections[1],
-    title: "Custodigit",
+    title: "JG Genesis",
     description: "Description of test1",
     technologies: [
       technologies[0],
@@ -236,6 +236,187 @@ export const projects = [
         img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
       }
     ]
+  },
+  {
+    category: workSections[3],
+    title: "Productions",
+    description: "Description of test1",
+    technologies: [
+      technologies[5],
+      technologies[2]
+    ],
+    image: require("../../assets/img/Photography/productions/thumbnail.jpg"),
+    thumbnail: require("../../assets/img/Photography/productions/thumbnail.jpg"),
+    imgs: [
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/productions/studientage-2018-36.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/productions/TIM_3228.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/productions/weihnachts-gd-18-70.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/productions/weihnachts-gd-18-94.jpg")
+      }
+    ]
+  },
+  {
+    category: workSections[3],
+    title: "Wedding Lena & Joni",
+    description: "Description of test1",
+    technologies: [
+      technologies[5],
+      technologies[2]
+    ],
+    image: require("../../assets/img/Photography/lenajoni/thumbnail.jpg"),
+    thumbnail: require("../../assets/img/Photography/lenajoni/thumbnail.jpg"),
+    imgs: [
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-185.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-209.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-202.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-147.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-167.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-213.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-218.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-194.jpg")
+      }
+    ]
+  },
+  {
+    category: workSections[3],
+    title: "Free Time",
+    description: "Description of test1",
+    technologies: [
+      technologies[5],
+      technologies[2]
+    ],
+    image: require("../../assets/img/Photography/freetime/thumbnail.jpg"),
+    thumbnail: require("../../assets/img/Photography/freetime/thumbnail.jpg"),
+    imgs: [
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/freetime/DSC_6495.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/freetime/DSC_6535.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/freetime/TIM_0798.jpg")
+      }
+    ]
+  },
+  {
+    category: workSections[3],
+    title: "People",
+    description: "Description of test1",
+    technologies: [
+      technologies[5],
+      technologies[2]
+    ],
+    image: require("../../assets/img/Photography/people/thumbnail.jpg"),
+    thumbnail: require("../../assets/img/Photography/people/thumbnail.jpg"),
+    imgs: [
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/people/humans-of-biel-color.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/people/P1064610.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/people/MLR_6624.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/people/TIM_9579.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/people/wedding-lena-joni-220.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/people/studientage-2018-87.jpg")
+      }
+    ]
+  },
+  {
+    category: workSections[3],
+    title: "holidays",
+    description: "Description of test1",
+    technologies: [
+      technologies[5],
+      technologies[2]
+    ],
+    image: require("../../assets/img/Photography/holidays/thumbnail.jpg"),
+    thumbnail: require("../../assets/img/Photography/holidays/thumbnail.jpg"),
+    imgs: [
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/holidays/P4170055.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/holidays/P4190008.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/holidays/P4160003.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/holidays/P7220897.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/holidays/MLR_0536.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/holidays/MLR_0806.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/holidays/P4160320.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Photography/holidays/P4170112 (2)-Bearbeitet.jpg")
+      }
+    ]
   }
 ];
 
@@ -314,18 +495,18 @@ export const qualiprojects = [
     }
   },
   {
-    title: "...new Project",
+    title: "Full Stack Developer SimpleScreen?",
     start: new Date(2019, 8),
     end: new Date(2020, 2),
     description: [
-      "Einführung der Abläufe in der Swisscom",
-      "Basis Software",
-      "Einrichtung der Geräte",
-      "Kennenlernen LB"
+      "Rest API entwickeln",
+      "Asp.Net Core & MongoDB & Vue",
+      "Arbeiten nach SCRUM",
+      "Coden, Testen, dokumentieren "
     ],
     qpa: {
-      name: "...",
-      link: "..."
+      name: "Benaja Hunzinger",
+      link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTAAHUBE2"
     }
   },
 ];
@@ -339,12 +520,12 @@ export const skills = [
   {
     id: 1,
     title: "Vanilla JS",
-    score: 8
+    score: 7
   },
   {
     id: 2,
     title: "React/Redux",
-    score: 7
+    score: 8
   },
   {
     id: 3,

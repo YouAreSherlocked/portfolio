@@ -51,7 +51,6 @@ body {
 
 h1 {
   font-size: 24px;
-  cursor: pointer;
   text-align: center;
   color: #fff;
 }
@@ -145,6 +144,15 @@ div.go-dark {
 
 .remain-black {
   color: #333 !important;
+}
+
+.arrow-go-down {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  bottom: 40px;
+  left: calc(50% - 50px);
+  cursor: pointer;
 }
 
 @keyframes fadeIn {
@@ -274,15 +282,6 @@ div.go-dark {
   color: #fff;
 }
 
-#welcome > img {
-  width: 50px;
-  height: auto;
-  position: absolute;
-  bottom: 40px;
-  left: calc(50% - 50px);
-  cursor: pointer;
-}
-
 /* #endregion */
 /* #region --- HOME */
 
@@ -343,7 +342,7 @@ div.go-dark {
 
 .skill:hover {
   background-color: #00e683;
-  background-position: 50% 260%;
+  background-position: 50% 50%;
   background-size: 80%;
   background-repeat: no-repeat;
 }
@@ -396,10 +395,14 @@ div.go-dark {
   padding: 60px 0;
 }
 
-#qualiprojects .quali-projects {
+#qualiprojects > .quali-projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+#qualiprojects > .quali-projects > .qualiproject > p > b {
+  margin-right: 10px;
 }
 
 /* #endregion */
@@ -667,6 +670,18 @@ nav p:hover {
   }
 }
 
+@media screen and (max-height: 740px) {
+  .orientation {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 350px) {
+  .mode {
+    display: none;
+  }
+}
+
 /* #endregion */
 /* #region --- WORK */
 
@@ -749,7 +764,7 @@ nav p:hover {
 #workDetail > .intro div:first-child {
   display: flex;
   align-items: center;
-  flex: 1 0 40%;
+  flex: 1 0 60%;
 }
 
 #workDetail > .intro div:first-child > img {
@@ -763,29 +778,46 @@ nav p:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1 0 60%;
+  flex: 1 0 40%;
   padding: 80px;
 }
 
-#workDetail > .intro div:last-child >  {
-  flex: 1 0 60%;
-  padding: 80px;
+#workDetail .work-detail-imgs {
+  width: 70%;
+  margin: 200px auto 0;
 }
 
-#workDetail .work-imgs img {
-  width: 60%;
+#workDetail .work-detail-imgs img {
+  width: 100%;
   margin: 60px auto 0;
   display: block;
 }
 
-#workDetail .work-imgs p {
+#workDetail .work-detail-imgs p {
   width: 60%;
   margin: 40px auto 120px;
   display: block;
 }
 
-#workDetail .work-imgs hr {
+#workDetail .work-detail-imgs hr {
   width: 60%;
 }
+
+/* #endregion */
+
+/* #region error */
+
+  #error > div {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    top: calc(50% - 25px);
+    left: calc(50% - 100px);
+  }
+
+  #error * {
+    text-align: center;
+
+  }
 
 /* #endregion */

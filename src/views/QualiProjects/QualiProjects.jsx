@@ -8,11 +8,11 @@ class QualiProject extends Component {
       <div className="quader-card quader-card-big qualiproject remain-black" key={i} >
           <h4>{project.title}</h4>
           <ul>
-              { project.description.map((point, i) => (
-                <li key={i}>{ point }</li>
-              )) }
-            </ul>
-          <p><b>QPA</b> <a href={project.qpa.link}>{ project.qpa.name }</a></p>
+            { project.description.map((point, i) => (
+              <li key={i}>{ point }</li>
+            )) }
+          </ul>
+          <p><b>QPA</b> <a href={project.qpa.link} target="_blank">{ project.qpa.name }</a></p>
           <p><b>Start</b> { project.start.toLocaleDateString("en-US", dateOptions) }</p>
           <p><b>End</b> { project.end.toLocaleDateString("en-US", dateOptions) }</p>
       </div>

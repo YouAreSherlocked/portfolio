@@ -16,17 +16,19 @@ class Welcome extends Component {
   }
 
   render() {
+    const { sections, scroll, trigger } = this.props;
     return (
-      this.props.sections ?
+      sections ?
         <section id="welcome">
           <div></div>
           <div>
             <h1>Portfolio | Timo Mayer</h1>
           </div>
-         <img className="appear appear-from-top" 
-              src={require('../../assets/img/portfolio_down_green.svg')} 
-              alt="Go To Content" 
-              onClick={this.scrollDown} />
+          
+          <img className={ `arrow-go-down${scroll < trigger ? " appear appear-from-top" : " disappear"}`} 
+                src={require('../../assets/img/portfolio_down_green.svg')} 
+                alt="Go To Content" 
+                onClick={this.scrollDown} />
         </section>
       : null
     );

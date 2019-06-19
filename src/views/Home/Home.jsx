@@ -65,6 +65,7 @@ class Home extends Component {
   }
 
   render() {
+    const goDownTrigger = 600;
     const { skills, workSections, projects, qualiprojects, sections } = this.props;
     return (
       !this.state.isAuthenticated ? 
@@ -75,11 +76,11 @@ class Home extends Component {
       :
         <React.Fragment>
           <Hud scroll={this.state.scrollPos}/>
-          <Welcome sections={sections}></Welcome>
+          <Welcome sections={sections} scroll={this.state.scrollPos} trigger={goDownTrigger}></Welcome>
           <Letter title="Full Stack Developer / Webentwicklung SimpleScreen" name="Benaja"></Letter>
           <Skills skills={skills}></Skills>
           <QualiProjects qualiprojects={qualiprojects}></QualiProjects>
-          <Work workSections={workSections} projects={projects} />
+          <Work workSections={workSections} projects={projects}></Work>
         </React.Fragment>
     );
   };

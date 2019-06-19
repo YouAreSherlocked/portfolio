@@ -1,17 +1,23 @@
 import React, { Component, Fragment } from 'react';
 import '../../css/index.css';
 import Hud from '../Hud/Hud';
+import helpers from '../../helpers/helpers';
 
 class WorkDetail extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  scrollDown() {
+    const dest = 'work-detail-imgs';
+    helpers.scrollToElement(dest);
+  }
 
   render() {
     const { project } = this.props.location.state;
     const imgs = project.imgs.map((img, i) => (
-      <div className="work-imgs-object" key={i}>
-        <img src={img.img} alt="work-img" />
-        <p>{img.text}</p>
-        <hr></hr>
-      </div>
+      <img src={img.img} alt="work-img" key={i} />
     ));
     return (
       <Fragment>
@@ -26,18 +32,22 @@ class WorkDetail extends Component {
               <p>{project.inProgress ? "Project is currently in Progress" : project.description}</p>
               <h5>Technologies</h5>
               { project.technologies.map((tech, i) => (
-                <p>{tech}</p>
+                <p key={i}>{tech}</p>
               )) }
             </div>
           </div>
           { imgs.length !== 0 ? 
             <Fragment>
-              <h3>Images</h3>
-              <div className="work-imgs">
+              <div className="work-detail-imgs" id="work-detail-imgs">
+                <h3>Images</h3>
                 {imgs}
               </div>
             </Fragment>
           : null }
+            <img className="appear appear-from-top arrow-go-down" 
+                src={require('../../assets/img/portfolio_down_green.svg')} 
+                alt="Go To Images" 
+                onClick={this.scrollDown} />
         </section>
       </Fragment>
     );
