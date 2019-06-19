@@ -10,12 +10,7 @@ const parts = [
 const height = 400;
 const space = 2;
 const persY = 324.69;
-const pathPers = `M92.63,56.43H63.36a28.35,28.35,0,1,0-7.68,0H26.41A26.4,
-                  26.4,0,0,0,0,82.83v87.8a9.92,9.92,0,0,0,9.92,9.92h0a9.92,
-                  9.92,0,0,0,9.92-9.92V90.43h7.32v87.4h.07V301.42a12.76,
-                  12.76,0,0,0,25.51,0V177.83H66.29V301.42a12.76,12.76,0,0,
-                  0,25.51,0V177.83h.08V90.43h7.31v80.2a9.92,9.92,0,0,0,9.92,
-                  9.92h0a9.92,9.92,0,0,0,9.92-9.92V82.83A26.4,26.4,0,0,0,92.63,56.43Z`;
+
 const pathPersTwo = `M92.63,66.94H59.52V56.69A28.35,28.35,0,1,0,31.17,28.35,
                      28.34,28.34,0,0,0,59.52,56.69V66.94H26.41A26.41,26.41,0,
                      0,0,0,93.35v87.79a9.93,9.93,0,0,0,9.92,9.93h0a9.93,9.93,
@@ -90,24 +85,3 @@ class SvgTest extends Component {
 }
 
 export default withRouter(SvgTest);
-
-{/*
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.03 314.17" height={height}  style={{display: "block", margin: " 100px auto"}} preserveAspectRatio>
-    <defs>
-      <clipPath id="cutOne">
-        <rect x="0" y={this.getStart(0)} width="200" height={this.getHeight(0)} />
-      </clipPath>
-      <clipPath id="cutTwo">
-        <rect x="0" y={this.getStart(1)} width="200" height={this.getHeight(1)} />
-      </clipPath>
-      <clipPath id="cutThree">
-        <rect x="0" y={this.getStart(2)} width="200" height={this.getHeight(2)} />
-      </clipPath>
-    </defs>
-    <title>ddso_person</title>
-
-    <path d={pathPers} clipPath="url(#cutOne)" fill="#0EABA9" />
-    <path d={pathPers} clipPath="url(#cutTwo)" fill="#A63297" />
-    <path d={pathPers} clipPath="url(#cutThree)" fill="#91BA2F" />
-  </svg>
-*/}

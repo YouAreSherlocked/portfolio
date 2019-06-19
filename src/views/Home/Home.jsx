@@ -28,19 +28,27 @@ class Home extends Component {
   }
 
   async componentDidMount() {
+    await console.log(this.props.homeScroll)
     if (localStorage.getItem("auth") === this.sha1(password)) {
       this.setState({
         isAuthenticated: true
       })
     }
+    
     window.addEventListener('scroll', this.handleScroll);
     this.setState({isLoading: true});
     await this.props.initState();
+    await this.setState({ scrollPos: this.props.homeScroll });
     this.setState({isLoading: false});
   }
 
   handleScroll() {
-    this.setState({scrollPos: window.pageYOffset})
+    this.setState({ scrollPos: window.pageYOffset });
+    // this.props.storeHomeScroll(window.pageYOffset);
+  }
+
+  componentWillUnmount() {
+    this.props.storeHomeScroll(window.pageYOffset);
   }
 
   sha1(data) {
@@ -57,7 +65,7 @@ class Home extends Component {
   }
 
   render() {
-    const { skills, workSections, projects, qualiprojects } = this.props;
+    const { skills, workSections, projects, qualiprojects, sections } = this.props;
     return (
       !this.state.isAuthenticated ? 
         <Login checkAuth={this.checkAuth}></Login>
@@ -67,8 +75,8 @@ class Home extends Component {
       :
         <React.Fragment>
           <Hud scroll={this.state.scrollPos}/>
-          <Welcome></Welcome>
-          <Letter title="Projekt Titel und OE" name="Vorname"></Letter>
+          <Welcome sections={sections}></Welcome>
+          <Letter title="Full Stack Developer / Webentwicklung SimpleScreen" name="Benaja"></Letter>
           <Skills skills={skills}></Skills>
           <QualiProjects qualiprojects={qualiprojects}></QualiProjects>
           <Work workSections={workSections} projects={projects} />
@@ -82,12 +90,15 @@ const mapStateToProps = state => ({
   workSections: selectors.getWorkSections(state.mainState),
   projects: selectors.getProjects(state.mainState),
   skills: selectors.getSkills(state.mainState),
-  qualiprojects: selectors.getQualiprojects(state.mainState)
+  qualiprojects: selectors.getQualiprojects(state.mainState),
+  homeScroll: selectors.getHomeScroll(state.mainState),
+  sections: selectors.getSections(state.mainState)
 });
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({
-    initState: operations.initState
+    initState: operations.initState,
+    storeHomeScroll: operations.storeHomeScroll
   }, dispatch);
 };
 

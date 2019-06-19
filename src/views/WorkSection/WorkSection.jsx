@@ -9,9 +9,9 @@ class WorkSection extends Component {
       project.category === this.props.title ?
         <div className="project-card" key={i} style={{backgroundImage: "url(" + project.thumbnail + ")"}}>
           <Link to={{
-            pathname: `/detail/${project.title}`,
-            state: {project}
-          }} project={project}>
+                  pathname: `/detail/${project.title}`,
+                  state: {project}
+                }} project={project} >
             {project.title}
             { project.inProgress ? <h2>In Progress</h2> : null }
           </Link>

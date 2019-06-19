@@ -7,7 +7,8 @@ const initialState = {
   skills: [],
   qualiprojects: [],
   darkMode: false,
-  activeSection: ""
+  activeSection: "",
+  homeScroll: 0
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -32,6 +33,9 @@ const mainReducer = (state = initialState, action) => {
     }
     case types.SWITCH_ACTIVE_SECTION: {
       return { ...state, activeSection: action.activeSection };
+    }
+    case types.STORE_HOME_SCROLL: {
+      return { ...state, homeScroll: action.homeScroll };
     }
     default:
       return state;

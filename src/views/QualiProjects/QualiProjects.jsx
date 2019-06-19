@@ -5,7 +5,7 @@ class QualiProject extends Component {
 
   render() {
     const projects = this.props.qualiprojects.map((project, i) => (
-      <div className="quader-card quader-card-big qualiproject" key={i} >
+      <div className="quader-card quader-card-big qualiproject remain-black" key={i} >
           <h4>{project.title}</h4>
           <ul>
               { project.description.map((point, i) => (

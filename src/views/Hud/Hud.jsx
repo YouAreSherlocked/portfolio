@@ -12,24 +12,21 @@ import GoToTop from './GoToTop';
 import SwitchSection from './SwitchSection';
 
 class Hud extends Component {
-  
+
   render() {
     const { scroll, small, sections, darkMode, switchMode, activeSection, switchActiveSection } = this.props;
-    const trigger = 600;
+    const trigger = 800;
     const hud = (
-      <div className = "hud">
-        <Mode darkMode={darkMode}
-              switchMode={switchMode}
-              scroll={scroll}
-              trigger={trigger}>
-        </Mode>
-        <SwitchSection trigger={trigger}
-                         scroll={scroll}
-                         switchActiveSection={switchActiveSection}
-                         activeSection={activeSection}
-                         sections={sections}
-                         small={small}>
-        </SwitchSection>
+      scroll > trigger ?
+      <div className = "hud appear">
+        <Mode darkMode={darkMode} switchMode={switchMode}></Mode>
+      {/*<SwitchSection 
+                        scroll={scroll}
+                        switchActiveSection={switchActiveSection}
+                        activeSection={activeSection}
+                        sections={sections}
+                        small={small}>
+          </SwitchSection>*/}
 
         {this.props.small ?
           <Link to="/">
@@ -41,19 +38,17 @@ class Hud extends Component {
           <React.Fragment>
 
             <Orientation sections={sections}
-                        trigger={trigger}
                         scroll={scroll}
                         switchActiveSection={switchActiveSection}
                         activeSection={activeSection}>
             </Orientation>
-            <Navigation sections={sections}></Navigation>
-            <GoToTop scroll={scroll}
-                     trigger={trigger}>
-            </GoToTop>
+            <Navigation sections={sections} scroll={scroll}></Navigation>
+            <GoToTop></GoToTop>
           </React.Fragment>
         : null }
 
       </div>
+      : null
     );
     return (
       <React.Fragment>

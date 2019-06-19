@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
 import { withRouter } from 'react-router-dom';
+import helpers from '../../helpers/helpers';
 
 class GoToTop extends Component {
+
+  scrollToElement(section) {
+    helpers.scrollToElement(section.toLowerCase().replace(" ", ""));
+  }
+
   render() {
-    const { scroll, trigger } = this.props;
     return (
-      scroll > trigger ?
-        <a href="#">
-          <img className="right go-to-top appear" src={require('../../assets/img/portfolio_go_to_top.svg')} alt="Go To Top" />
+        <a onClick={() => this.scrollToElement('root')}>
+          <img className="right go-to-top" src={require('../../assets/img/portfolio_go_to_top.svg')} alt="Go To Top" />
         </a>
-      : null
       );
   };
 }

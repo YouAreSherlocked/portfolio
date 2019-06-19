@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
 import { withRouter } from 'react-router-dom';
+import helpers from '../../helpers/helpers';
 let scroll = 0;
 let lastScroll = 0;
 
@@ -28,15 +29,19 @@ class Orientation extends Component {
     return e.getBoundingClientRect().top + document.documentElement.scrollTop;
   }
 
+  scrollToElement(section) {
+    helpers.scrollToElement(section.toLowerCase().replace(" ", ""));
+  }
+
   createPoints() {
     return(
       this.props.sections.map(section => (
-        <a href={"#" + section.toLowerCase().replace(" ", "")} 
+        <a onClick={(e) => this.scrollToElement(section)} 
            key={section} 
            onMouseOver={() => this.showTitle(section)} 
            onMouseOut={this.hideTitle}>
            <p className={this.state.active === section ? "active appear-from-right" : ""}>{section}</p>
-          <div className={this.state.active === section ? "active" : ""}></div>
+          <div className={`point${this.state.active === section ? " active" : ""}`}></div>
         </a>
       ))
     );
@@ -70,7 +75,6 @@ class Orientation extends Component {
   }
 
   showTitle(e) {
-    //this.props.switchActiveSection(e);
     this.setState({
       active: e
     });
@@ -83,14 +87,11 @@ class Orientation extends Component {
   }
 
   render() {
-    const { scroll, trigger } = this.props;
-    return (
-      scroll > trigger ? 
-        <div className="right orientation appear">
+    return ( 
+        <div className="right orientation">
         {this.createPoints()}
-        <div className="orientation-line"></div>
+        <div className="line orientation-line"></div>
         </div>
-      : null
     );
   };
 }

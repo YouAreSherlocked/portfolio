@@ -5,6 +5,7 @@ const getSkills = state => state.skills;
 const getQualiprojects = state => state.qualiprojects;
 const getMode = state => state.darkMode;
 const getActiveSection = state => state.activeSection;
+const getHomeScroll = state => state.homeScroll;
 
 export default {
   getSections,
@@ -13,5 +14,6 @@ export default {
   getSkills,
   getQualiprojects,
   getMode,
-  getActiveSection
+  getActiveSection,
+  getHomeScroll
 }

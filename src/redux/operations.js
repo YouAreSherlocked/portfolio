@@ -15,26 +15,44 @@ const initState = () => async dispatch => {
     dispatch(actions.storeSkills(skills));
 }
 
-const switchMode = mode => async dispatch => {
-    document.body.style.background = mode ? "#333" : "#fff";
+const switchMode = mode => dispatch => {
+    const dark = "#333";
+    const bright = "#ddd";
+    const white = "#fff";
+    document.body.style.backgroundColor = mode ? dark : white;
 
-    Array.from(document.querySelectorAll('div, .line')).map(e => {
-        if (e.getAttribute('class') === "line") {
-            e.style.background = !mode ? "#333" : "#fff";
+    Array.from(document.querySelectorAll('div, .line, .hamburger > span')).map(e => {
+        if (e.getAttribute('class') != null) {
+            if (e.getAttribute('class').includes('line')) {
+                e.style.backgroundColor = !mode ? dark : bright;
+            }
+            if (e.getAttribute('class').includes('point')) {
+                e.style.backgroundColor = mode ? dark : bright;
+                e.style.borderColor = !mode ? dark : bright;
+            }
         }
-        e.style.color = !mode ? "#333" : "#fff";
-        e.style.border = !mode ? "#333" : "#fff";
+        console.log(e.tagName)
+        if (e.tagName === 'SPAN') {
+            e.style.backgroundColor = !mode ? dark : bright;
+        }
+
+        e.style.color = !mode ? dark : bright;
     });
+
     dispatch(actions.switchMode(mode));
 }
 
-const switchActiveSection = section => async dispatch => {
-    console.log(section)
+const switchActiveSection = section => dispatch => {
     dispatch(actions.switchActiveSection(section));
+}
+
+const storeHomeScroll = scroll => dispatch => {
+    dispatch(actions.storeHomeScroll(scroll));
 }
 
 export default {
     initState,
     switchMode,
-    switchActiveSection
+    switchActiveSection,
+    storeHomeScroll
 };

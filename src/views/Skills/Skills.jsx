@@ -23,8 +23,8 @@ class Skills extends Component {
     const skills = this.props.skills.map((skill, i) => (
       <div className="quader-card skill" key={i} style={{backgroundImage: `url(${this.getLogo(skill.title.toLowerCase().replace(/ /g, '').replace(/\//g, '').replace(/#/g, 'sharp'))})`}}>
         <React.Fragment>
-          <div className="skill-score"><span>{skill.score}</span>/&thinsp;10</div>
-          <div className="skill-name">{skill.title.replace("/", " / ")}</div>
+          <div className="skill-score remain-black"><span>{skill.score}</span>/&thinsp;10</div>
+          <div className="skill-name remain-black">{skill.title.replace("/", " / ")}</div>
         </React.Fragment>
       </div>
     ));

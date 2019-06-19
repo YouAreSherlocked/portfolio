@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
 import { withRouter } from 'react-router-dom';
+import helpers from '../../helpers/helpers';
 
 class Navigation extends Component {
   constructor(props) {
@@ -13,12 +14,19 @@ class Navigation extends Component {
     this.changeMenuState = this.changeMenuState.bind(this);
   }
 
+  scrollToElement(section) {
+    helpers.scrollToElement(section.toLowerCase().replace(" ", ""));
+    this.changeMenuState();
+  }
+
   changeMenuState() {
     this.setState(prevState => ({ menuIsOpen: !prevState.menuIsOpen }));
   }
 
   render() {
     const { menuIsOpen } = this.state;
+    const { sections } = this.props;
+
     return (
       <React.Fragment>
         <div className="right hamburger" onClick={this.changeMenuState}>
@@ -30,8 +38,8 @@ class Navigation extends Component {
         { menuIsOpen ? <div className="menu-bg appear" onClick={this.changeMenuState}></div> : null }
         <nav className={ menuIsOpen ? "open-menu" : "" }>
           {
-            this.props.sections.map((section, i) => (
-              <a href={"#" + section.toLowerCase().replace(" ", "")} key={i} onClick={this.changeMenuState}>{section}</a>
+            sections.map((section, i) => (
+              <p key={i} onClick={(e) => this.scrollToElement(section)}>{section}</p>
             ))
           }
         </nav>

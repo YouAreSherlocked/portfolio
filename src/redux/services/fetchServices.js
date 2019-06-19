@@ -164,7 +164,7 @@ export const projects = [
     title: "Zoom",
     description: "Description of test1",
     technologies: [
-      technologies[9]
+      technologies[8]
     ],
     image: require("../../assets/img/programming/zoom.jpg"),
     thumbnail: require("../../assets/img/programming/zoom.jpg"),
@@ -184,8 +184,8 @@ export const projects = [
     title: "Digital Business Carreer",
     description: "Description of test1",
     technologies: [
-      technologies[8],
-      technologies[14]
+      technologies[7],
+      technologies[13]
     ],
     image: require("../../assets/img/programming/dbc.jpg"),
     thumbnail: require("../../assets/img/programming/dbc.jpg"),
@@ -206,9 +206,9 @@ export const projects = [
     inProgress: true,
     description: "Description of test1",
     technologies: [
-      technologies[9],
-      technologies[12],
-      technologies[13]
+      technologies[8],
+      technologies[11],
+      technologies[12]
     ],
     image: require("../../assets/img/programming/fitadviser.jpg"),
     thumbnail: require("../../assets/img/programming/fitadviser.jpg"),
@@ -221,8 +221,8 @@ export const projects = [
     title: "Portfolio",
     description: "Description of test1",
     technologies: [
-      technologies[8],
-      technologies[14]
+      technologies[7],
+      technologies[13]
     ],
     image: require("../../assets/img/programming/portfolio.jpg"),
     thumbnail: require("../../assets/img/programming/portfolio.jpg"),

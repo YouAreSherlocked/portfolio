@@ -35,6 +35,11 @@ export const switchActiveSection = section => ({
   activeSection: section
 });
 
+export const storeHomeScroll = homeScroll => ({
+  type: types.STORE_HOME_SCROLL,
+  homeScroll: homeScroll
+});
+
 export default {
   switchMode,
   storeSections,
@@ -42,5 +47,6 @@ export default {
   storeProjects,
   storeSkills,
   switchActiveSection,
-  storeQualiprojects
+  storeQualiprojects,
+  storeHomeScroll
 }
