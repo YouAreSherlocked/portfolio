@@ -29,7 +29,7 @@ class Home extends Component {
 
   async componentDidMount() {
     await console.log(this.props.homeScroll)
-    if (localStorage.getItem("auth") === this.sha1(password)) {
+    if (localStorage.getItem("auth") === this.sha1(goodToGo)) {
       this.setState({
         isAuthenticated: true
       })
@@ -56,11 +56,11 @@ class Home extends Component {
   }
 
   checkAuth(input) {
-    if (input === password) {
+    if (input === goodToGo) {
       this.setState({
         isAuthenticated: true
       })
-      localStorage.setItem("auth", this.sha1(password));
+      localStorage.setItem("auth", this.sha1(goodToGo));
     }
   }
 
@@ -103,5 +103,5 @@ const mapDispatchToProps = dispatch => {
   }, dispatch);
 };
 
-const password = "test";
+const goodToGo = "simplescreen";
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

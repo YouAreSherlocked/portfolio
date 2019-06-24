@@ -67,33 +67,37 @@ export const projects = [
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+        img: require("../../assets/img/Graphic Design/genesis/genesistown_2_flyer_v2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+        img: require("../../assets/img/Graphic Design/genesis/flyer kleidertausch deutsch v2.jpg")
       }
     ]
   },
   {
     category: workSections[1],
-    title: "JG Genesis",
+    title: "Custodigit",
     description: "Description of test1",
     technologies: [
       technologies[0],
       technologies[1],
       technologies[6]
     ],
-    image: require("../../assets/img/Graphic Design/genesis/sledgecamp_flyer_19.jpg"),
+    image: require("../../assets/img/Graphic Design/custodigit/custodigit_logo_icon.jpg"),
     thumbnail: require("../../assets/img/Graphic Design/custodigit/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+        img: require("../../assets/img/Graphic Design/custodigit/thumbnail2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+        img: require("../../assets/img/Graphic Design/custodigit/custodigit_product.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/custodigit/custodigit_product_v2.jpg")
       }
     ]
   },
@@ -109,11 +113,11 @@ export const projects = [
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+        img: require("../../assets/img/Illustrations/designerchallenge/illustration_small_part1.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+        img: require("../../assets/img/Illustrations/designerchallenge/illustration_small_part2.jpg")
       }
     ]
   },
@@ -130,11 +134,11 @@ export const projects = [
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+        img: require("../../assets/img/Illustrations/genesis/basics_beamer-crop-u2955.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+        img: require("../../assets/img/Illustrations/genesis/genesis_stories_logo_v2-crop-u3554.jpg")
       }
     ]
   },
@@ -151,11 +155,7 @@ export const projects = [
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
-      },
-      {
-        text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+        img: require("../../assets/img/Illustrations/appsteam/apps_team_comic.jpg")
       }
     ]
   },
@@ -166,16 +166,16 @@ export const projects = [
     technologies: [
       technologies[8]
     ],
-    image: require("../../assets/img/programming/zoom.jpg"),
-    thumbnail: require("../../assets/img/programming/zoom.jpg"),
+    image: require("../../assets/img/programming/zoom/zoom.jpg"),
+    thumbnail: require("../../assets/img/programming/zoom/zoom.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+        img: require("../../assets/img/programming/zoom/zoom_2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+        img: require("../../assets/img/programming/zoom/zoom_3.jpg")
       }
     ]
   },
@@ -187,16 +187,20 @@ export const projects = [
       technologies[7],
       technologies[13]
     ],
-    image: require("../../assets/img/programming/dbc.jpg"),
-    thumbnail: require("../../assets/img/programming/dbc.jpg"),
+    image: require("../../assets/img/programming/dbc/dbc.jpg"),
+    thumbnail: require("../../assets/img/programming/dbc/dbc.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+        img: require("../../assets/img/programming/dbc/dbc_2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+        img: require("../../assets/img/programming/dbc/dbc_3.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/programming/dbc/dbc_4.jpg")
       }
     ]
   },
@@ -210,8 +214,8 @@ export const projects = [
       technologies[11],
       technologies[12]
     ],
-    image: require("../../assets/img/programming/fitadviser.jpg"),
-    thumbnail: require("../../assets/img/programming/fitadviser.jpg"),
+    image: require("../../assets/img/programming/fitadviser/fitadviser.jpg"),
+    thumbnail: require("../../assets/img/programming/fitadviser/fitadviser.jpg"),
     imgs: [
       
     ]
@@ -224,16 +228,28 @@ export const projects = [
       technologies[7],
       technologies[13]
     ],
-    image: require("../../assets/img/programming/portfolio.jpg"),
-    thumbnail: require("../../assets/img/programming/portfolio.jpg"),
+    image: require("../../assets/img/programming/portfolio/portfolio.jpg"),
+    thumbnail: require("../../assets/img/programming/portfolio/portfolio.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+        img: require("../../assets/img/programming/portfolio/portfolio_2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+        img: require("../../assets/img/programming/portfolio/portfolio_3.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/programming/portfolio/portfolio_4.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/programming/portfolio/portfolio_5.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/programming/portfolio/portfolio_dark.jpg")
       }
     ]
   },

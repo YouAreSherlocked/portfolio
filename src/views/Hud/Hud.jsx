@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/index.css';
 import { connect } from 'react-redux';
@@ -18,12 +18,15 @@ class Hud extends Component {
 
   render() {
     const { scroll, small, sections, darkMode, switchMode, activeSection, switchActiveSection } = this.props;
-    const trigger = 800;
+    const trigger = 720;
     const hud = (
       small ?
+      <Fragment>
         <Link to="/">
           <img src={ darkMode ? arrowBright : arrowDark} alt="go back" className="go-back top left" />
         </Link>
+        <GoToTop darkMode={darkMode}></GoToTop>
+        </Fragment>
       : 
       scroll > trigger ?
       <div className="hud appear">

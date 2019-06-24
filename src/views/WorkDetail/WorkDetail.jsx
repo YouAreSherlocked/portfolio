@@ -17,7 +17,10 @@ class WorkDetail extends Component {
   render() {
     const { project } = this.props.location.state;
     const imgs = project.imgs.map((img, i) => (
-      <img src={img.img} alt="work-img" key={i} />
+      <Fragment>
+        <img src={img.img} alt="work-img" key={i} />
+        <hr></hr>
+      </Fragment>
     ));
     return (
       <Fragment>

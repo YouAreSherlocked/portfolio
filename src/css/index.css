@@ -107,6 +107,10 @@ section:not(#welcome) {
   margin: 120px auto;
 }
 
+section:not(#welcome):last-child {
+  margin-bottom: 40px;
+}
+
 .go-dark {
   color: #ddd !important;
   border-color: #ddd !important;
@@ -151,7 +155,7 @@ div.go-dark {
   height: auto;
   position: absolute;
   bottom: 40px;
-  left: calc(50% - 50px);
+  left: calc(50% - 25px);
   cursor: pointer;
 }
 
@@ -232,7 +236,7 @@ div.go-dark {
 }
 
 @media screen and (max-width: 500px) {
-  section:not(#welcome) {
+  section:not(#welcome):not(#workDetail) {
     margin-left: 20px !important;
   }
 }
@@ -280,6 +284,13 @@ div.go-dark {
   font-size: 24px;
   padding: 0 20px;
   color: #fff;
+}
+
+@media screen and (max-width: 500px) {
+  #welcome > div:nth-child(2) {
+    width: 100%;
+    left: 0;
+  }
 }
 
 /* #endregion */
@@ -674,6 +685,10 @@ nav p:hover {
   .orientation {
     display: none;
   }
+
+  .right {
+    right: 15px;
+  }
 }
 
 @media screen and (max-height: 350px) {
@@ -686,8 +701,11 @@ nav p:hover {
 /* #region --- WORK */
 
 .work-section {
-  margin-bottom: 160px;
-  padding-top: 50px;
+  margin-bottom: 200px;
+}
+
+.work-section:last-child {
+  margin-bottom: 0;
 }
 
 .work-section > .gallery {
@@ -741,6 +759,8 @@ nav p:hover {
 @media screen and (max-width: 750px) {
   .work-section > .gallery > .project-card {
     flex-basis: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -768,10 +788,11 @@ nav p:hover {
 }
 
 #workDetail > .intro div:first-child > img {
-  width: 100%;
+  width: auto;
   height: auto;
+  max-height: 800px;
+  max-width: 800px;
   margin: auto;
-  /*box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);*/
 }
 
 #workDetail > .intro div:last-child {
@@ -800,7 +821,51 @@ nav p:hover {
 }
 
 #workDetail .work-detail-imgs hr {
-  width: 60%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1600px) {
+  #workDetail .work-detail-imgs {
+    width: 85%;
+  }
+
+  #workDetail .work-detail-imgs img {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  #workDetail {
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  #workDetail > .intro {
+    flex-direction: column;
+  }
+
+  #workDetail > .intro div:first-child {
+    flex: 1 0 100%;
+  }
+
+  #workDetail > .intro div:last-child {
+    padding: 40px;
+  }
+
+  #workDetail .work-detail-imgs {
+    width: 100%;
+    margin: 200px auto 0;
+  }
+
+  #workDetail .work-detail-imgs h3 {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  #workDetail .work-detail-imgs img {
+    margin-top: 10px;
+  }
 }
 
 /* #endregion */
@@ -817,7 +882,6 @@ nav p:hover {
 
   #error * {
     text-align: center;
-
   }
 
 /* #endregion */
