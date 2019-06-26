@@ -37,7 +37,7 @@ export const projects = [
   {
     category: workSections[1],
     title: "Mirayon",
-    description: "Description of test1",
+    description: "Mirayon is a group of musicians. They produce post-rock, experimental music.",
     technologies: [
       technologies[0]
     ],
@@ -57,7 +57,7 @@ export const projects = [
   {
     category: workSections[1],
     title: "JG Genesis",
-    description: "Description of test1",
+    description: "JG Genesis ist eine Jugendgruppe, welche neben wöchentlichen Gemeinschafts- und Inputabende regelmässig auch Themenabende und Camps anbietet.",
     technologies: [
       technologies[1],
       technologies[2]
@@ -78,7 +78,7 @@ export const projects = [
   {
     category: workSections[1],
     title: "Custodigit",
-    description: "Description of test1",
+    description: "Custodigit ist ein Crypto Wallet Startup welches einen Koplettauftritt benötigte.",
     technologies: [
       technologies[0],
       technologies[1],
@@ -104,7 +104,7 @@ export const projects = [
   {
     category: workSections[2],
     title: "1 Day Designer Challenge",
-    description: "Description of test1",
+    description: "Immer wieder mal findet im Apps Team eine 1 Tag-Designer Challenge statt. In dieser Challenge ging es darum ein Plattencover zu gestalten.",
     technologies: [
       technologies[2]
     ],
@@ -162,7 +162,7 @@ export const projects = [
   {
     category: workSections[0],
     title: "Zoom",
-    description: "Description of test1",
+    description: "Zoom ist eine Webapp um das Wissen über Kunden und ihre Zahlungsgewohnheiten zu testen.",
     technologies: [
       technologies[8]
     ],
@@ -182,7 +182,7 @@ export const projects = [
   {
     category: workSections[0],
     title: "Digital Business Carreer",
-    description: "Description of test1",
+    description: "DBC ist ein Jobportal um bei Startups eine Arbeitsstelle zu finden.",
     technologies: [
       technologies[7],
       technologies[13]
@@ -208,7 +208,7 @@ export const projects = [
     category: workSections[0],
     title: "Fit Adviser",
     inProgress: true,
-    description: "Description of test1",
+    description: "Fitadviser bietet Sport- und Fitnessberatung an und brauchte zusätzlich zur bereits bestehenden Webseite breitgefächerte Adminfunktionen.",
     technologies: [
       technologies[8],
       technologies[11],
@@ -223,7 +223,7 @@ export const projects = [
   {
     category: workSections[0],
     title: "Portfolio",
-    description: "Description of test1",
+    description: "Portfolio um einen Überblick von erstellten Arbeiten darzustellen.",
     technologies: [
       technologies[7],
       technologies[13]

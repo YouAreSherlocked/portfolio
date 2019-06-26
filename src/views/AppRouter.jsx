@@ -5,24 +5,19 @@ import ErrorPage from './ErrorPage/ErrorPage';
 import Home from './Home/Home';
 import SvgTest  from './SvgTest/SvgTest';
 import WorkDetail from './WorkDetail/WorkDetail';
-import XmlToHtml from './Xml/XmlToHtml';
-
 
 class AppRouter extends Component {
     
   render() {
     return (
-      <Fragment>
-          <BrowserRouter>
-              <Switch>
-                  <Route exact path="/" component={Home}></Route>
-                  <Route exact path="/test" component={SvgTest}></Route>
-                  <Route exact path="/xml" component={XmlToHtml}></Route>
-                  <Route exact path="/detail/:id" component={WorkDetail}></Route>
-                  <Route component={ErrorPage}></Route>
-              </Switch>
-          </BrowserRouter>
-      </Fragment>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/test" component={SvgTest}></Route>
+          <Route exact path="/detail/:id" component={WorkDetail}></Route>
+          <Route component={ErrorPage}></Route>
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
