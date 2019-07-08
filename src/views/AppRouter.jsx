@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import ErrorPage from './ErrorPage/ErrorPage';

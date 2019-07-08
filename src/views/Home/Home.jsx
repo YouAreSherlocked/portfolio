@@ -10,6 +10,7 @@ import Skills from '../Skills/Skills';
 import Letter from '../Letter/Letter';
 import QualiProjects from '../QualiProjects/QualiProjects';
 import Login from '../Login/Login';
+import References from '../References/References';
 
 const crypto = require("crypto");
 
@@ -20,6 +21,7 @@ class Home extends Component {
     this.state = {
       isAuthenticated: false,
       isLoading: true,
+      input: "",
       scrollPos: 0
     }
 
@@ -28,7 +30,6 @@ class Home extends Component {
   }
 
   async componentDidMount() {
-    await console.log(this.props.homeScroll)
     if (localStorage.getItem("auth") === this.sha1(goodToGo)) {
       this.setState({
         isAuthenticated: true
@@ -56,9 +57,10 @@ class Home extends Component {
   }
 
   checkAuth(input) {
-    if (input === goodToGo) {
+    if (goodToGo.includes(input)) {
       this.setState({
-        isAuthenticated: true
+        isAuthenticated: true,
+        input: input
       })
       localStorage.setItem("auth", this.sha1(goodToGo));
     }
@@ -66,7 +68,8 @@ class Home extends Component {
 
   render() {
     const goDownTrigger = 600;
-    const { skills, workSections, projects, qualiprojects, sections } = this.props;
+    const { skills, workSections, projects, qualiprojects, sections, references } = this.props;
+    const { scrollPos, input } = this.state;
     return (
       !this.state.isAuthenticated ? 
         <Login checkAuth={this.checkAuth}></Login>
@@ -75,12 +78,13 @@ class Home extends Component {
         <div>Loading Data :)</div>
       :
         <React.Fragment>
-          <Hud scroll={this.state.scrollPos}/>
-          <Welcome sections={sections} scroll={this.state.scrollPos} trigger={goDownTrigger}></Welcome>
-          <Letter title="Full Stack Developer / Webentwicklung SimpleScreen" name="Benaja"></Letter>
+          <Hud scroll={scrollPos}/>
+          <Welcome sections={sections} scroll={scrollPos} trigger={goDownTrigger}></Welcome>
+          <Letter project={input}></Letter>
           <Skills skills={skills}></Skills>
           <QualiProjects qualiprojects={qualiprojects}></QualiProjects>
           <Work workSections={workSections} projects={projects}></Work>
+          <References references={references}></References>
         </React.Fragment>
     );
   };
@@ -93,7 +97,8 @@ const mapStateToProps = state => ({
   skills: selectors.getSkills(state.mainState),
   qualiprojects: selectors.getQualiprojects(state.mainState),
   homeScroll: selectors.getHomeScroll(state.mainState),
-  sections: selectors.getSections(state.mainState)
+  sections: selectors.getSections(state.mainState),
+  references: selectors.getReferences(state.mainState)
 });
 
 const mapDispatchToProps = dispatch => {
@@ -103,5 +108,5 @@ const mapDispatchToProps = dispatch => {
   }, dispatch);
 };
 
-const goodToGo = "simplescreen";
+const goodToGo = [ "simplescreen", "dqmtool", "vicotv"];
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -6,6 +6,8 @@ const getQualiprojects = state => state.qualiprojects;
 const getMode = state => state.darkMode;
 const getActiveSection = state => state.activeSection;
 const getHomeScroll = state => state.homeScroll;
+const getReferences = state => state.references;
+const getActiveWork = state => state.getActiveWork;
 
 export default {
   getSections,
@@ -14,6 +16,8 @@ export default {
   getSkills,
   getQualiprojects,
   getMode,
+  getReferences,
   getActiveSection,
+  getActiveWork,
   getHomeScroll
 }

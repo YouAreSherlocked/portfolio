@@ -25,6 +25,11 @@ export const storeQualiprojects = qualiprojects => ({
   qualiprojects: qualiprojects
 });
 
+export const storeReferences = references => ({
+  type: types.STORE_REFERENCES,
+  references: references
+});
+
 export const switchMode = mode => ({
   type: types.SWITCH_MODE,
   mode: mode
@@ -33,6 +38,11 @@ export const switchMode = mode => ({
 export const switchActiveSection = section => ({
   type: types.SWITCH_ACTIVE_SECTION,
   activeSection: section
+});
+
+export const switchActiveWork = work => ({
+  type: types.SWITCH_ACTIVE_WORK,
+  activeWorkn: work
 });
 
 export const storeHomeScroll = homeScroll => ({
@@ -47,6 +57,8 @@ export default {
   storeProjects,
   storeSkills,
   switchActiveSection,
+  switchActiveWork,
   storeQualiprojects,
+  storeReferences,
   storeHomeScroll
 }

@@ -12,7 +12,7 @@ class QualiProject extends Component {
               <li key={i}>{ point }</li>
             )) }
           </ul>
-          <p><b>QPA</b> <a href={project.qpa.link} target="_blank">{ project.qpa.name }</a></p>
+          <p><b>QPA</b> <a href={project.qpa.link} target="_blank" rel="noopener noreferrer">{ project.qpa.name }</a></p>
           <p><b>Start</b> { project.start.toLocaleDateString("en-US", dateOptions) }</p>
           <p><b>End</b> { project.end.toLocaleDateString("en-US", dateOptions) }</p>
       </div>

@@ -7,12 +7,14 @@ const initState = () => async dispatch => {
     const projects = await fetch.projects;
     const qualiprojects = await fetch.qualiprojects;
     const skills = await fetch.skills;
+    const references = await fetch.references;
 
     dispatch(actions.storeSections(sections));
     dispatch(actions.storeWorkSections(workSections));
     dispatch(actions.storeProjects(projects));
     dispatch(actions.storeQualiprojects(qualiprojects));
     dispatch(actions.storeSkills(skills));
+    dispatch(actions.storeReferences(references));
 }
 
 const switchMode = mode => dispatch => {
@@ -31,7 +33,6 @@ const switchMode = mode => dispatch => {
                 e.style.borderColor = !mode ? dark : bright;
             }
         }
-        console.log(e.tagName)
         if (e.tagName === 'SPAN') {
             e.style.backgroundColor = !mode ? dark : bright;
         }

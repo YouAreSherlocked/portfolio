@@ -13,7 +13,7 @@ const elmYPosition = eID => {
   var elm = document.getElementById(eID);
   var y = elm.offsetTop - 50;
   var node = elm;
-  while (node.offsetParent && node.offsetParent != document.body) {
+  while (node.offsetParent && node.offsetParent !== document.body) {
       node = node.offsetParent;
       y += node.offsetTop;
   } return y;
@@ -37,7 +37,7 @@ const scrollToElement = eID => {
           leapY += step; if (leapY > stopY) leapY = stopY; timer++;
       } return;
   }
-  for ( var i=startY; i>stopY; i-=step ) {
+  for ( var j=startY; j>stopY; j-=step ) {
       setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
       leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
   }

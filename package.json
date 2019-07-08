@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "fast-xml-parser": "^3.12.16",
-    "he": "^1.2.0",
     "react": "^16.6.3",
+    "react-app-polyfill": "^1.0.1",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-router": "^5.0.0",
@@ -24,12 +23,20 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "IE 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "IE 11",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
     "@types/react": "^16.8.13"
   }

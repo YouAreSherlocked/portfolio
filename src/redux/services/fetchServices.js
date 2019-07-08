@@ -5,7 +5,8 @@ export const sections = [
    'Programming',
    'Graphic Design', 
    'Illustrations', 
-   'Photography'
+   'Photography',
+   'References'
 ];
 
 export const workSections = [
@@ -511,18 +512,15 @@ export const qualiprojects = [
     }
   },
   {
-    title: "Full Stack Developer SimpleScreen?",
+    title: "?",
     start: new Date(2019, 8),
     end: new Date(2020, 2),
     description: [
-      "Rest API entwickeln",
-      "Asp.Net Core & MongoDB & Vue",
-      "Arbeiten nach SCRUM",
-      "Coden, Testen, dokumentieren "
+
     ],
     qpa: {
-      name: "Benaja Hunzinger",
-      link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTAAHUBE2"
+      name: "?",
+      link: ""
     }
   },
 ];
@@ -581,3 +579,21 @@ export const skills = [
     score: 6
   },
 ];
+
+export const references = [
+  {
+    name: "Andreas Mast",
+    img: require("../../assets/img/references/mastandreas.jpg"),
+    link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTBIMAA00"
+  },
+  {
+    name: "Petre Tudor",
+    img: require("../../assets/img/references/tudorpetre.jpg"),
+    link: "https://collaboration.swisscom.com/SwisscomPerson.aspx?accountname=CORPROOT%5CTAATUPE3"
+  },
+  {
+    name: "John Riordan",
+    img: require("../../assets/img/references/riordanjohn.jpg"),
+    link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTAARIJO1"
+  }
+]

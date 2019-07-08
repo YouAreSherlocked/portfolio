@@ -9,7 +9,7 @@ import Orientation from './Orientation';
 import Mode from './Mode';
 import Navigation from './Navigation';
 import GoToTop from './GoToTop';
-import SwitchSection from './SwitchSection';
+//import SwitchSection from './SwitchSection';
 
 const arrowDark = require("../../assets/img/portfolio_go_back.svg");
 const arrowBright = require("../../assets/img/portfolio_go_back_white.svg");
