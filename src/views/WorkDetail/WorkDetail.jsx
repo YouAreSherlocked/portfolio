@@ -15,7 +15,6 @@ class WorkDetail extends Component {
   }
 
   render() {
-    console.log(this.state.project)
     const { project } = this.props.location.state;
     const imgs = project.imgs.map((img, i) => (
       <Fragment key={i}>
@@ -23,6 +22,7 @@ class WorkDetail extends Component {
       </Fragment>
     ));
     return (
+      this.props.location.state.project ?
       <Fragment>
         <Hud small></Hud>
         <section id="workDetail">
@@ -53,6 +53,7 @@ class WorkDetail extends Component {
                 onClick={this.scrollDown} />
         </section>
       </Fragment>
+      : <p>Loading :)</p>
     );
   }
 }

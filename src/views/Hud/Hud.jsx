@@ -58,9 +58,9 @@ class Hud extends Component {
       : null
     );
     return (
-      <React.Fragment>
+      <div id="hud">
         {hud}
-      </React.Fragment>
+      </div>
     );
   };
 }

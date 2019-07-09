@@ -23,7 +23,7 @@ const switchMode = mode => dispatch => {
     const white = "#fff";
     document.body.style.backgroundColor = mode ? dark : white;
 
-    Array.from(document.querySelectorAll('div, .line, .hamburger > span')).map(e => {
+    Array.from(document.querySelectorAll('div, .line, .hamburger > span')).forEach(e => {
         if (e.getAttribute('class') != null) {
             if (e.getAttribute('class').includes('line')) {
                 e.style.backgroundColor = !mode ? dark : bright;

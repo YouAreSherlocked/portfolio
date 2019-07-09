@@ -36,6 +36,7 @@ class Orientation extends Component {
   createPoints() {
     return(
       this.props.sections.map(section => (
+        // eslint-disable-next-line
         <a onClick={(e) => this.scrollToElement(section)} 
            key={section} 
            onMouseOver={() => this.showTitle(section)} 

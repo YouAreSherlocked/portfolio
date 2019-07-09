@@ -29,7 +29,7 @@ class Home extends Component {
   }
 
   async componentDidMount() {
-    goodToGo.map(item => {
+    goodToGo.forEach(item => {
       if (localStorage.getItem("auth") === helpers.hash(item)) {
         this.setState({
           isAuthenticated: true
@@ -66,7 +66,7 @@ class Home extends Component {
   render() {
     const goDownTrigger = 600;
     const { skills, workSections, projects, qualiprojects, sections, references } = this.props;
-    const { scrollPos, input } = this.state;
+    const { scrollPos } = this.state;
     return (
       !this.state.isAuthenticated ? 
         <Login checkAuth={this.checkAuth}></Login>
@@ -105,5 +105,5 @@ const mapDispatchToProps = dispatch => {
   }, dispatch);
 };
 
-const goodToGo = [ "simplescreen", "dqmtool", "vicotv"];
+const goodToGo = [ "simplescreen", "dqmtool", "vicotv", "dqmscorecard"];
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

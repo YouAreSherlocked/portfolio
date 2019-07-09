@@ -11,10 +11,11 @@ class GoToTop extends Component {
 
   render() {
     return (
-        <a onClick={() => this.scrollToElement('root')}>
-          <img className="right go-to-top" src={this.props.darkMode ? require('../../assets/img/portfolio_go_to_top_white.svg') : require('../../assets/img/portfolio_go_to_top.svg')} alt="Go To Top" />
-        </a>
-      );
+      // eslint-disable-next-line
+      <a onClick={() => this.scrollToElement('root')}>
+        <img className="right go-to-top" src={this.props.darkMode ? require('../../assets/img/portfolio_go_to_top_white.svg') : require('../../assets/img/portfolio_go_to_top.svg')} alt="Go To Top" />
+      </a>
+    );
   };
 }
 

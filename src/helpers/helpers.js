@@ -35,12 +35,12 @@ const scrollToElement = eID => {
   var timer = 0;
   if (stopY > startY) {
       for ( var i=startY; i<stopY; i+=step ) {
-          setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+          setTimeout('window.scrollTo(0, '+ leapY +')', timer * speed);
           leapY += step; if (leapY > stopY) leapY = stopY; timer++;
       } return;
   }
   for ( var j=startY; j>stopY; j-=step ) {
-      setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+      setTimeout('window.scrollTo(0, '+ leapY +')', timer * speed);
       leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
   }
 }

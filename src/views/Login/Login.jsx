@@ -9,7 +9,9 @@ handleChange(e) {
   render() {
     return (
       <section id="login">
-        <input type="password" name="login" id="login" placeholder="enter code" onChange={(e) => this.handleChange(e)}></input>
+        <form>
+          <input type="password" name="login" id="login" placeholder="enter code" onChange={(e) => this.handleChange(e)}></input>
+        </form>
       </section>
     );
   }

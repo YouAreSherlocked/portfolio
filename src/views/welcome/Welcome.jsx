@@ -21,7 +21,7 @@ class Welcome extends Component {
       sections ?
         <section id="welcome">
           <div></div>
-          <div>
+          <div id="welcomeSign">
             <h1>Portfolio | Timo Mayer</h1>
           </div>
           
