@@ -5,7 +5,7 @@ class References extends Component {
   render() {
     const refs = this.props.references.map((ref, i) => {
       return (
-        <div key={i} class="reference" style={{ backgroundImage: `url(${ref.img})` }}>
+        <div key={i} className="reference" style={{ backgroundImage: `url(${ref.img})` }}>
           <a href={ref.link} target="_blank" rel="noopener noreferrer">
             { ref.name }
           </a>

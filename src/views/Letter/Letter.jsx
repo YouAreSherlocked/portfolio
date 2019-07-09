@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Curriculum from '../curriculum/Curriculum';
+import helpers from '../../helpers/helpers';
+
 
 class Letter extends Component {
 
-  getLetter(input) {
+  getLetter() {
     let letter = "";
-    switch (input) {
-      case "simplescreen":
+    switch (localStorage.getItem("auth")) {
+      case helpers.hash("simplescreen"):
         letter = (
           <div>
           <p>
@@ -44,7 +46,7 @@ class Letter extends Component {
         </div>
         );
         break;
-      case "dqmtool":
+      case helpers.hash("dqmtool"):
         letter = (
           <div>
           <p>
@@ -82,7 +84,7 @@ class Letter extends Component {
         </div>
         );
         break;
-        case "vicotv":
+        case helpers.hash("vicotv"):
         letter = (
           <div>
           <p>
@@ -130,11 +132,10 @@ class Letter extends Component {
   }
 
   render() {
-    const { project } = this.props;
     return (
       <section id="letter">
         <Curriculum></Curriculum>
-        {this.getLetter(project)}
+        {this.getLetter()}
       </section>
     );
   }

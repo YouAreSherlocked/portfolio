@@ -11,8 +11,7 @@ import Letter from '../Letter/Letter';
 import QualiProjects from '../QualiProjects/QualiProjects';
 import Login from '../Login/Login';
 import References from '../References/References';
-
-const crypto = require("crypto");
+import helpers from '../../helpers/helpers';
 
 class Home extends Component {
   constructor(props) {
@@ -30,11 +29,13 @@ class Home extends Component {
   }
 
   async componentDidMount() {
-    if (localStorage.getItem("auth") === this.sha1(goodToGo)) {
-      this.setState({
-        isAuthenticated: true
-      })
-    }
+    goodToGo.map(item => {
+      if (localStorage.getItem("auth") === helpers.hash(item)) {
+        this.setState({
+          isAuthenticated: true
+        });
+      }
+    });
     
     window.addEventListener('scroll', this.handleScroll);
     this.setState({isLoading: true});
@@ -52,17 +53,13 @@ class Home extends Component {
     this.props.storeHomeScroll(window.pageYOffset);
   }
 
-  sha1(data) {
-    return crypto.createHash("sha1").update(data, "binary").digest("hex");
-  }
-
   checkAuth(input) {
     if (goodToGo.includes(input)) {
       this.setState({
         isAuthenticated: true,
         input: input
       })
-      localStorage.setItem("auth", this.sha1(goodToGo));
+      localStorage.setItem("auth", helpers.hash(input));
     }
   }
 
@@ -80,7 +77,7 @@ class Home extends Component {
         <React.Fragment>
           <Hud scroll={scrollPos}/>
           <Welcome sections={sections} scroll={scrollPos} trigger={goDownTrigger}></Welcome>
-          <Letter project={input}></Letter>
+          <Letter></Letter>
           <Skills skills={skills}></Skills>
           <QualiProjects qualiprojects={qualiprojects}></QualiProjects>
           <Work workSections={workSections} projects={projects}></Work>

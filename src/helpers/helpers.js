@@ -1,3 +1,5 @@
+const crypto = require("crypto");
+
 const currentYPosition = () => {
   // Firefox, Chrome, Opera, Safari
   if (window.self.pageYOffset) return window.self.pageYOffset;
@@ -43,6 +45,11 @@ const scrollToElement = eID => {
   }
 }
 
+const hash = data => {
+    return crypto.createHash("sha1").update(data, "binary").digest("hex");
+}
+
 export default {
-  scrollToElement
+  scrollToElement,
+  hash
 }
