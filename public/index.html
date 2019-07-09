@@ -16,3 +16,49 @@
     <div id="root"></div>
   </body>
 </html>
+
+<script>
+  window.onload = function() {
+    window.addEventListener('mousemove', mouse => {
+      let xpos;
+      let ypos;
+      if (mouse)
+      {
+        //FireFox
+        xpos = mouse.clientX;
+        ypos = mouse.clientY;
+      }
+      else
+      {
+        //IE
+        xpos = window.event.sclientX;
+        ypos = window.event.clientY;
+      }
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      let dirX = 1;
+      let dirY = 1;
+      if(xpos > width/2) {
+          dirX = -1;
+          xpos = xpos-(width/2);
+      }
+      else {
+          dirX = 1;
+          xpos = (width/2 - xpos);
+      }
+      if(ypos > height/2) {
+          dirY = 1;
+          ypos = ypos-(height/2);
+      }
+      else {
+          dirY = -1;
+          ypos = (height/2 - ypos);
+      }
+      const intesivity = 60; //Higher = less intense
+      const warp = (ypos + xpos) / (width + height)*(-1);
+      const sum = ypos + xpos;
+      const panel = document.getElementById('welcomeSign');
+      panel.style.transform = 'perspective(1000px) rotateX(' + ypos/intesivity*dirY + 'deg) rotateY(' + xpos/intesivity*dirX + 'deg)';
+    })
+  }
+</script>
