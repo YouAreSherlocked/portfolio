@@ -62,7 +62,7 @@ class Home extends Component {
 
   render() {
     const goDownTrigger = 600;
-    const { skills, workSections, projects, qualiprojects, sections, references, activeSection, activeProject } = this.props;
+    const { dark, skills, workSections, projects, qualiprojects, sections, references, activeSection, activeProject } = this.props;
     const { scrollPos } = this.state;
     return (
       !this.state.isAuthenticated ? 
@@ -74,7 +74,7 @@ class Home extends Component {
         <React.Fragment>
           <Hud scroll={scrollPos}/>
           <Welcome sections={sections} scroll={scrollPos} trigger={goDownTrigger}></Welcome>
-          <Letter activeSection={activeSection}></Letter>
+          <Letter activeSection={activeSection} darkMode={dark}></Letter>
           <Skills skills={skills} activeSection={activeSection}></Skills>
           <QualiProjects qualiprojects={qualiprojects} activeSection={activeSection}></QualiProjects>
           <Work workSections={workSections} projects={projects} activeSection={activeSection} activeProject={activeProject}></Work>
