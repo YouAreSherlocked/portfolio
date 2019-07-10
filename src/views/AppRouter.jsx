@@ -14,7 +14,7 @@ class AppRouter extends Component {
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/test" component={SvgTest}></Route>
-          <Route exact path="/detail/:id" component={WorkDetail}></Route>
+          <Route exact path="/detail/:category/:id" component={WorkDetail}></Route>
           <Route component={ErrorPage}></Route>
         </Switch>
       </BrowserRouter>

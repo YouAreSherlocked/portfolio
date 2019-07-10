@@ -19,7 +19,7 @@ class QualiProject extends Component {
     ));
     return (
       <section id="qualiprojects">
-        <h3>Qualiprojects</h3>
+        <h3 className={this.props.activeSection === 'Qualiprojects' ? "active-title" : ""}>Qualiprojects</h3>
         <div className="quali-projects">
           {projects}
         </div>

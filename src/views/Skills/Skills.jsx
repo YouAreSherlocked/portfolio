@@ -30,7 +30,7 @@ class Skills extends Component {
     ));
     return (
       <section id='skills'>
-        <h3>Skills</h3>
+        <h3 className={this.props.activeSection === 'Skills' ? "active-title" : ""}>Skills</h3>
         <div className="skills">
           {skills}
         </div>

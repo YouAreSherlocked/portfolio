@@ -37,6 +37,7 @@ export const technologies = [
 export const projects = [
   {
     category: workSections[1],
+    id: 1,
     title: "Mirayon",
     description: "Mirayon is a group of musicians. They produce post-rock, experimental music.",
     technologies: [
@@ -57,6 +58,7 @@ export const projects = [
   },
   {
     category: workSections[1],
+    id: 2,
     title: "JG Genesis",
     description: "JG Genesis ist eine Jugendgruppe, welche neben wöchentlichen Gemeinschafts- und Inputabende regelmässig auch Themenabende und Camps anbietet.",
     technologies: [
@@ -78,6 +80,7 @@ export const projects = [
   },
   {
     category: workSections[1],
+    id: 3,
     title: "Custodigit",
     description: "Custodigit ist ein Crypto Wallet Startup welches einen Koplettauftritt benötigte.",
     technologies: [
@@ -104,6 +107,7 @@ export const projects = [
   },
   {
     category: workSections[2],
+    id: 4,
     title: "1 Day Designer Challenge",
     description: "Immer wieder mal findet im Apps Team eine 1 Tag-Designer Challenge statt. In dieser Challenge ging es darum ein Plattencover zu gestalten.",
     technologies: [
@@ -124,6 +128,7 @@ export const projects = [
   },
   {
     category: workSections[2],
+    id: 5,
     title: "JG Genesis",
     description: "Description of test1",
     technologies: [
@@ -145,6 +150,7 @@ export const projects = [
   },
   {
     category: workSections[2],
+    id: 6,
     title: "Apps Team",
     description: "Description of test1",
     technologies: [
@@ -162,6 +168,7 @@ export const projects = [
   },
   {
     category: workSections[0],
+    id: 7,
     title: "Zoom",
     description: "Zoom ist eine Webapp um das Wissen über Kunden und ihre Zahlungsgewohnheiten zu testen.",
     technologies: [
@@ -182,6 +189,7 @@ export const projects = [
   },
   {
     category: workSections[0],
+    id: 8,
     title: "Digital Business Carreer",
     description: "DBC ist ein Jobportal um bei Startups eine Arbeitsstelle zu finden.",
     technologies: [
@@ -207,6 +215,7 @@ export const projects = [
   },
   {
     category: workSections[0],
+    id: 9,
     title: "Fit Adviser",
     inProgress: true,
     description: "Fitadviser bietet Sport- und Fitnessberatung an und brauchte zusätzlich zur bereits bestehenden Webseite breitgefächerte Adminfunktionen.",
@@ -223,6 +232,7 @@ export const projects = [
   },
   {
     category: workSections[0],
+    id: 10,
     title: "Portfolio",
     description: "Portfolio um einen Überblick von erstellten Arbeiten darzustellen.",
     technologies: [
@@ -256,8 +266,9 @@ export const projects = [
   },
   {
     category: workSections[3],
+    id: 11,
     title: "Productions",
-    description: "Description of test1",
+    description: "",
     technologies: [
       technologies[5],
       technologies[2]
@@ -285,8 +296,9 @@ export const projects = [
   },
   {
     category: workSections[3],
+    id: 12,
     title: "Wedding Lena & Joni",
-    description: "Description of test1",
+    description: "",
     technologies: [
       technologies[5],
       technologies[2]
@@ -330,8 +342,9 @@ export const projects = [
   },
   {
     category: workSections[3],
+    id: 13,
     title: "Free Time",
-    description: "Description of test1",
+    description: "",
     technologies: [
       technologies[5],
       technologies[2]
@@ -355,8 +368,9 @@ export const projects = [
   },
   {
     category: workSections[3],
+    id: 14,
     title: "People",
-    description: "Description of test1",
+    description: "",
     technologies: [
       technologies[5],
       technologies[2]
@@ -392,8 +406,9 @@ export const projects = [
   },
   {
     category: workSections[3],
+    id: 15,
     title: "holidays",
-    description: "Description of test1",
+    description: "",
     technologies: [
       technologies[5],
       technologies[2]

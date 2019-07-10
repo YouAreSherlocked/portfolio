@@ -14,7 +14,7 @@ class References extends Component {
     });
     return (
       <section id="references">
-        <h3>References</h3>
+        <h3 className={this.props.activeSection === 'References' ? "active-title" : ""}>References</h3>
         <div className="references">
           { refs }
         </div>

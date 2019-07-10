@@ -12,6 +12,7 @@ import QualiProjects from '../QualiProjects/QualiProjects';
 import Login from '../Login/Login';
 import References from '../References/References';
 import helpers from '../../helpers/helpers';
+import Footer from '../Footer/Footer';
 
 class Home extends Component {
   constructor(props) {
@@ -49,10 +50,6 @@ class Home extends Component {
     // this.props.storeHomeScroll(window.pageYOffset);
   }
 
-  componentWillUnmount() {
-    this.props.storeHomeScroll(window.pageYOffset);
-  }
-
   checkAuth(input) {
     if (goodToGo.includes(input)) {
       this.setState({
@@ -65,7 +62,7 @@ class Home extends Component {
 
   render() {
     const goDownTrigger = 600;
-    const { skills, workSections, projects, qualiprojects, sections, references } = this.props;
+    const { skills, workSections, projects, qualiprojects, sections, references, activeSection, activeProject } = this.props;
     const { scrollPos } = this.state;
     return (
       !this.state.isAuthenticated ? 
@@ -77,11 +74,12 @@ class Home extends Component {
         <React.Fragment>
           <Hud scroll={scrollPos}/>
           <Welcome sections={sections} scroll={scrollPos} trigger={goDownTrigger}></Welcome>
-          <Letter></Letter>
-          <Skills skills={skills}></Skills>
-          <QualiProjects qualiprojects={qualiprojects}></QualiProjects>
-          <Work workSections={workSections} projects={projects}></Work>
-          <References references={references}></References>
+          <Letter activeSection={activeSection}></Letter>
+          <Skills skills={skills} activeSection={activeSection}></Skills>
+          <QualiProjects qualiprojects={qualiprojects} activeSection={activeSection}></QualiProjects>
+          <Work workSections={workSections} projects={projects} activeSection={activeSection} activeProject={activeProject}></Work>
+          <References references={references} activeSection={activeSection}></References>
+          <Footer></Footer>
         </React.Fragment>
     );
   };
@@ -95,7 +93,9 @@ const mapStateToProps = state => ({
   qualiprojects: selectors.getQualiprojects(state.mainState),
   homeScroll: selectors.getHomeScroll(state.mainState),
   sections: selectors.getSections(state.mainState),
-  references: selectors.getReferences(state.mainState)
+  references: selectors.getReferences(state.mainState),
+  activeSection: selectors.getActiveSection(state.mainState),
+  activeProject: selectors.getActiveProject(state.mainState)
 });
 
 const mapDispatchToProps = dispatch => {

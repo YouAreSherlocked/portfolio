@@ -47,6 +47,10 @@ const switchActiveSection = section => dispatch => {
     dispatch(actions.switchActiveSection(section));
 }
 
+const switchActiveWork = work => dispatch => {
+    dispatch(actions.switchActiveWork(work));
+}
+
 const storeHomeScroll = scroll => dispatch => {
     dispatch(actions.storeHomeScroll(scroll));
 }
@@ -55,5 +59,6 @@ export default {
     initState,
     switchMode,
     switchActiveSection,
+    switchActiveWork,
     storeHomeScroll
 };

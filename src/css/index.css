@@ -65,6 +65,7 @@ h3 {
   font-size: 20pt;
   margin: 0 0 20px;
   margin-bottom: 40px;
+  transition: color .3s ease, font-size .3s ease;
 }
 
 h3:after {
@@ -74,6 +75,15 @@ h3:after {
   height: 4px;
   background: #333;
   margin: 8px 0 0;
+}
+
+h3.active-title {
+  color: #00e683;
+  font-size: 40px;
+}
+
+h3.active-title:after {
+  background: #00e683;
 }
 
 h5 {
@@ -377,7 +387,6 @@ div.go-dark {
 
 
 .skills {
-  margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -464,13 +473,13 @@ nav {
   padding: 80px;
   z-index: 9999;
   transform: translateX(401px);
-  transition: all .6s ease;
+  transition: transform .6s ease;
   color: #fff;
 }
 
 nav.open-menu {
   transform: translateX(0);
-  transition: all .6s ease;
+  transition: transform .6s ease;
 }
 nav p {
   display: block;
@@ -683,7 +692,7 @@ nav p:hover {
 
 .mode-obj {
   position: absolute;
-  transition: all .6s ease;
+  transition: transform .6s ease;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -750,8 +759,6 @@ nav p:hover {
   flex: 0 0 calc(33.333% - 20px);
   margin: 8px;
   height: 300px;
-  /*box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.3);*/
-  transition: all .6s ease;
   background-color: #ccc;
   background-position: center;
   background-size: cover;
@@ -760,9 +767,7 @@ nav p:hover {
 }
 
 .work-section > .gallery > .project-card:hover {
-  /*transform: scale(1.01, 1.01);*/
-  transition: all .3s ease;
-  /*box-shadow: 0px 6px 14px 4px rgba(0,0,0,0.18);*/
+  transition: background .4s ease;
   background-image: none !important;
   background-color: #00e683;
   color: #fff !important;
@@ -797,7 +802,7 @@ nav p:hover {
 }
 
 /* #endregion */
-/* #region--- WORK DETAIL */
+/* #region --- WORK DETAIL */
 #workDetail {
   width: 80%;
   margin: auto;
@@ -905,8 +910,7 @@ nav p:hover {
 }
 
 /* #endregion */
-
-/* #region error */
+/* #region --- ERROR */
 
   #error > div {
     position: absolute;
@@ -921,8 +925,7 @@ nav p:hover {
   }
 
 /* #endregion */
-
-/* #region references */
+/* #region --- REFERENCES */
 
   #references > .references {
     width: 100%;
@@ -943,11 +946,10 @@ nav p:hover {
     background-repeat: no-repeat;
     border-radius: 50%;
     margin: 20px;
-    transition: all .6s ease;
   }
 
   #references > .references > .reference:hover {
-    transition: all .3s ease;
+    transition: background .9s ease;
     color: #fff !important;
     background-image: none !important;
     background-color: #00e683;
@@ -961,4 +963,20 @@ nav p:hover {
     height: 100%;
   }
 
+/* #endregion */
+/* #region --- FOOTER */
+  footer {
+    height: 50px;
+    background: #ddd;
+    display: table;
+    width: 100%;
+
+  }
+
+  footer > p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+  }
 /* #endregion */

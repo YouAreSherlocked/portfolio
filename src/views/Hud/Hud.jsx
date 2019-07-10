@@ -58,9 +58,9 @@ class Hud extends Component {
       : null
     );
     return (
-      <div id="hud">
+      <Fragment>
         {hud}
-      </div>
+      </Fragment>
     );
   };
 }

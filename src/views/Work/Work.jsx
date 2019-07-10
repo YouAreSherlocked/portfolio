@@ -4,12 +4,15 @@ import WorkSection from '../WorkSection/WorkSection';
 
 class Work extends Component {
   render() {
-    const sections = this.props.workSections.map(section => (
+    const { workSections, projects, activeSection, activeProject } = this.props;
+    const sections = workSections.map(section => (
       <WorkSection 
         title={section} 
         id={section} 
         key={section} 
-        projects={this.props.projects}>
+        projects={projects}
+        activeSection={activeSection}
+        activeProject={activeProject}>
       </WorkSection>
     ));
     return (

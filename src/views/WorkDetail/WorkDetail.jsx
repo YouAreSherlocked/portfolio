@@ -2,10 +2,27 @@ import React, { Component, Fragment } from 'react';
 import '../../css/index.css';
 import Hud from '../Hud/Hud';
 import helpers from '../../helpers/helpers';
+import { selectors } from '../../redux';
+import { connect } from 'react-redux';
 
 class WorkDetail extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      project: {}
+    }
+  }
+
   componentDidMount() {
+
+    localStorage.setItem('projectId', this.props.match.params.id)
+    //console.log(this.props.activeProject)
+    this.setState({
+      project: this.props.location.state !== undefined ? this.props.location.state.project : this.props.activeProject
+    });
+
     window.scrollTo(0, 0);
   }
 
@@ -14,15 +31,31 @@ class WorkDetail extends Component {
     helpers.scrollToElement(dest);
   }
 
+  getImgs(project) {
+    return (
+      project.imgs.map((img, i) => (
+        <Fragment key={i}>
+          <img src={img.img} alt="work-img" />
+        </Fragment>
+      ))
+    )
+  }
+
+  projectIsReady() {
+    return Object.getOwnPropertyNames(this.state.project).length !== 0;
+  }
+
   render() {
-    const { project } = this.props.location.state;
-    const imgs = project.imgs.map((img, i) => (
+    const { project } = this.state;
+
+    const imgs = this.projectIsReady() ? project.imgs.map((img, i) => (
       <Fragment key={i}>
         <img src={img.img} alt="work-img" />
       </Fragment>
-    ));
+    )) : null;
+
     return (
-      this.props.location.state.project ?
+     this.projectIsReady() ?
       <Fragment>
         <Hud small></Hud>
         <section id="workDetail">
@@ -43,7 +76,7 @@ class WorkDetail extends Component {
             <Fragment>
               <div className="work-detail-imgs" id="work-detail-imgs">
                 <h3>Images</h3>
-                {imgs}
+                { imgs }
               </div>
             </Fragment>
           : null }
@@ -53,9 +86,13 @@ class WorkDetail extends Component {
                 onClick={this.scrollDown} />
         </section>
       </Fragment>
-      : <p>Loading :)</p>
+      : <p>Loading :) </p>
     );
   }
 }
 
-export default WorkDetail;
+const mapStateToProps = state => ({
+  activeProject: selectors.getProjectById(state.mainState, localStorage.getItem('projectId'))
+});
+
+export default connect(mapStateToProps)(WorkDetail);
