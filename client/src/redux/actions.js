@@ -42,7 +42,7 @@ export const switchActiveSection = section => ({
 
 export const switchActiveWork = work => ({
   type: types.SWITCH_ACTIVE_WORK,
-  activeWorkn: work
+  activeWork: work
 });
 
 export const storeHomeScroll = homeScroll => ({

@@ -90,7 +90,7 @@ export const projects = [
       technologies[6]
     ],
     image: require("../../assets/img/Graphic Design/custodigit/custodigit_logo_icon.jpg"),
-    thumbnail: require("../../assets/img/Graphic Design/custodigit/thumbnail.jpg"),
+    thumbnail: require("../../assets/img/Graphic Design/custodigit/thumbnail4.jpg"),
     imgs: [
       {
         text: "img description",
@@ -102,7 +102,11 @@ export const projects = [
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/custodigit/custodigit_product_v2.jpg")
+        img: require("../../assets/img/Graphic Design/custodigit/custodigit_illus.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/custodigit/custodigit_logo_ideas.jpg")
       }
     ]
   },
@@ -450,7 +454,30 @@ export const projects = [
         img: require("../../assets/img/Photography/holidays/P4170112 (2)-Bearbeitet.jpg")
       }
     ]
-  }
+  },
+  {
+    category: workSections[1],
+    id: 16,
+    title: "Campaign Analytics",
+    description: "Logo Design für Daten Analyse Team.",
+    technologies: [
+      technologies[0],
+      technologies[1],
+      technologies[6]
+    ],
+    image: require("../../assets/img/Graphic Design/can/CAN_Logo_V2.jpg"),
+    thumbnail: require("../../assets/img/Graphic Design/can/thumbnail.jpg"),
+    imgs: [
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/can/can_logo_ideas.jpg")
+      },
+      {
+        text: "img description",
+        img: require("../../assets/img/Graphic Design/can/Campaign_Analytics_Wallpaper_V3_SMALL.jpg")
+      }
+    ]
+  },
 ];
 
 export const qualiprojects = [

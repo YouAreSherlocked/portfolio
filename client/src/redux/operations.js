@@ -47,8 +47,8 @@ const switchActiveSection = section => dispatch => {
     dispatch(actions.switchActiveSection(section));
 }
 
-const switchActiveWork = work => dispatch => {
-    dispatch(actions.switchActiveWork(work));
+const switchActiveWork = workId => dispatch => {
+    dispatch(actions.switchActiveWork(workId));
 }
 
 const storeHomeScroll = scroll => dispatch => {

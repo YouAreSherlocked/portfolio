@@ -9,7 +9,7 @@ const initialState = {
   references: [],
   darkMode: false,
   activeSection: "",
-  activeWork: {},
+  activeWork: 0,
   homeScroll: 0
 };
 

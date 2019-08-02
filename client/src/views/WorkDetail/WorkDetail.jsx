@@ -2,7 +2,8 @@ import React, { Component, Fragment } from 'react';
 import '../../css/index.css';
 import Hud from '../Hud/Hud';
 import helpers from '../../helpers/helpers';
-import { selectors } from '../../redux';
+import { selectors, operations } from '../../redux';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class WorkDetail extends Component {
@@ -15,11 +16,13 @@ class WorkDetail extends Component {
     }
   }
 
-  componentDidMount() {
-    localStorage.setItem('projectId', this.props.match.params.id)
-    //console.log(this.props.activeProject)
+  async componentDidMount() {
+    console.log(this.props.projects)
+    const id = this.props.match.params.id;
+    await this.props.switchActiveProject(id);
+    localStorage.setItem('projectId', id)
     this.setState({
-      project: this.props.location.state !== undefined ? this.props.location.state.project : this.props.activeProject
+      project: this.props.location.state !== undefined ? this.props.location.state.project : this.props.activeProjectById
     });
 
     window.scrollTo(0, 0);
@@ -53,10 +56,11 @@ class WorkDetail extends Component {
     )) : null;
 
     return (
-     this.projectIsReady() ?
       <Fragment>
-        <Hud small></Hud>
-        <section id="workDetail">
+      <Hud small></Hud>
+      <section id="workDetail">
+        { this.projectIsReady() ?
+          <Fragment>
           <div className="intro">
             <div>
               <img src={project.image} alt="project intro" />
@@ -82,15 +86,24 @@ class WorkDetail extends Component {
                 src={require('../../assets/img/portfolio_down_green.svg')} 
                 alt="Go To Images" 
                 onClick={this.scrollDown} />
-        </section>
+          </Fragment>
+            : <p>Loading :) </p> }
+          </section>
       </Fragment>
-      : <p>Loading :) </p>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  activeProject: selectors.getProjectById(state.mainState, localStorage.getItem('projectId'))
+const mapStateToProps = (state, props) => ({
+  activeProjectById: selectors.getProjectById(state, props.match.params.id),
+  activeProjectId: selectors.getActiveWorkId,
+  projects: selectors.getProjects(state)
 });
 
-export default connect(mapStateToProps)(WorkDetail);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    switchActiveProject: operations.switchActiveWork
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(WorkDetail);

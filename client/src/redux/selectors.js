@@ -7,7 +7,7 @@ const getMode = state => state.darkMode;
 const getActiveSection = state => state.activeSection;
 const getHomeScroll = state => state.homeScroll;
 const getReferences = state => state.references;
-const getActiveWork = state => state.activeWork;
+const getActiveWorkId = state => state.activeWork;
 
 const getProjectByName = (state, name) => {
   state.projects.forEach(p => {
@@ -17,23 +17,30 @@ const getProjectByName = (state, name) => {
   })
 }
 
-const getProjectById = (state, id) => {
+const getProjectById = async (state, id) => {
+  console.log(id)
+  console.log(state.mainState)
   let project = {};
-  state.projects.forEach(p => {
+  const projects = await getProjects(state.mainState);
+  console.log(projects)
+  getProjects(state.mainState).forEach(p => {
     if (p.id === parseInt(id)) {
       project = p;
     }
   });
+  console.log(project)
   return project;
 }
 
-const getActiveProject = state => {
+const getActiveProject = async state => {
+  const id = await state.activeWork;
   let project = {};
   state.projects.forEach(p => {
-    if (p.id === parseInt(localStorage.getItem('projectId'))) {
+    if (p.id === parseInt(state.activeWork)) {
       project = p;
     }
   });
+  //console.log(project)
   return project;
 }
 
@@ -46,7 +53,7 @@ export default {
   getMode,
   getReferences,
   getActiveSection,
-  getActiveWork,
+  getActiveWorkId,
   getHomeScroll,
   getProjectByName,
   getActiveProject,
