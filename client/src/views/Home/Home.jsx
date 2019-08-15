@@ -15,10 +15,12 @@ import helpers from '../../helpers/helpers';
 import Footer from '../Footer/Footer';
 import CV from '../CV/CV';
 
+import * as fetch from '../../services';
+
 class Home extends Component {
+
   constructor(props) {
     super(props);
-
     this.state = {
       isAuthenticated: false,
       isLoading: true,
@@ -31,6 +33,9 @@ class Home extends Component {
   }
 
   async componentDidMount() {
+    const projects = await fetch.projects.getAllProjects();
+    console.log(projects)
+    // Check if Auth is succesfull
     goodToGo.forEach(item => {
       if (localStorage.getItem("auth") === helpers.hash(item)) {
         this.setState({
@@ -38,8 +43,11 @@ class Home extends Component {
         });
       }
     });
-    
+
+    // Add Scroll Listener
     window.addEventListener('scroll', this.handleScroll);
+
+    // Call Method to get all Data from DB
     this.setState({isLoading: true});
     await this.props.initState();
     await this.setState({ scrollPos: this.props.homeScroll });

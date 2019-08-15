@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../css/index.css';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import helpers from '../../helpers/helpers';
 
 class Navigation extends Component {
@@ -42,6 +42,11 @@ class Navigation extends Component {
               <p key={i} onClick={(e) => this.scrollToElement(section)}>{section}</p>
             ))
           }
+          <br></br>
+          <hr></hr>
+          <Link to="/admin">
+            <p>Admin</p>
+          </Link>
         </nav>
       </React.Fragment>
     );

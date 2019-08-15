@@ -22,9 +22,11 @@ class Hud extends Component {
     const hud = (
       small ?
       <Fragment>
-        <Link to="/">
-          <img src={ darkMode ? arrowBright : arrowDark} alt="go back" className="go-back top left" />
-        </Link>
+      <div className="hud-header-small">
+          <Link to="/">
+            <img src={ darkMode ? arrowBright : arrowDark} alt="go back" className="go-back top left" />
+          </Link>
+        </div>
         <GoToTop darkMode={darkMode}></GoToTop>
         </Fragment>
       : 
@@ -38,8 +40,6 @@ class Hud extends Component {
                         sections={sections}
                         small={small}>
           </SwitchSection>*/}
-
-        
 
         {!small ? 
           <React.Fragment>

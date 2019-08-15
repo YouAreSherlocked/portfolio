@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
-import { Switch, Route, HashRouter } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import ErrorPage from './ErrorPage/ErrorPage';
 import Home from './Home/Home';
 import SvgTest  from './SvgTest/SvgTest';
 import WorkDetail from './WorkDetail/WorkDetail';
+import Admin from './Admin/Admin';
 
 class AppRouter extends Component {
     
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/test" component={SvgTest}></Route>
           <Route exact path="/detail/:category/:id" component={WorkDetail}></Route>
+          <Route exact path="/admin" component ={Admin}></Route>
           <Route component={ErrorPage}></Route>
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

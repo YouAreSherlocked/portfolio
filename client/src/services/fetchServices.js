@@ -34,7 +34,6 @@ export const technologies = [
   'Redux'
 ];
 
-
 export const projects = [
   {
     category: workSections[1],
@@ -44,16 +43,16 @@ export const projects = [
     technologies: [
       technologies[0]
     ],
-    image: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_4ways.jpg"),
-    thumbnail: require("../../assets/img/Graphic Design/mirayon/thumbnail.jpg"),
+    image: require("../assets/img/Graphic Design/mirayon/mirayon_logo_4ways.jpg"),
+    thumbnail: require("../assets/img/Graphic Design/mirayon/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
+        img: require("../assets/img/Graphic Design/mirayon/mirayon_logo_main-01.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
+        img: require("../assets/img/Graphic Design/mirayon/mirayon_logo_font.png")
       }  
     ]
   },
@@ -66,16 +65,16 @@ export const projects = [
       technologies[1],
       technologies[2]
     ],
-    image: require("../../assets/img/Graphic Design/genesis/sledgecamp_flyer_19.jpg"),
-    thumbnail: require("../../assets/img/Graphic Design/genesis/sledgecamp_flyer_19_illu.jpg"),
+    image: require("../assets/img/Graphic Design/genesis/sledgecamp_flyer_19.jpg"),
+    thumbnail: require("../assets/img/Graphic Design/genesis/sledgecamp_flyer_19_illu.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/genesis/genesistown_2_flyer_v2.jpg")
+        img: require("../assets/img/Graphic Design/genesis/genesistown_2_flyer_v2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/genesis/flyer kleidertausch deutsch v2.jpg")
+        img: require("../assets/img/Graphic Design/genesis/flyer kleidertausch deutsch v2.jpg")
       }
     ]
   },
@@ -89,24 +88,24 @@ export const projects = [
       technologies[1],
       technologies[6]
     ],
-    image: require("../../assets/img/Graphic Design/custodigit/custodigit_logo_icon.jpg"),
-    thumbnail: require("../../assets/img/Graphic Design/custodigit/thumbnail4.jpg"),
+    image: require("../assets/img/Graphic Design/custodigit/custodigit_logo_icon.jpg"),
+    thumbnail: require("../assets/img/Graphic Design/custodigit/thumbnail4.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/custodigit/thumbnail2.jpg")
+        img: require("../assets/img/Graphic Design/custodigit/thumbnail2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/custodigit/custodigit_product.jpg")
+        img: require("../assets/img/Graphic Design/custodigit/custodigit_product.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/custodigit/custodigit_illus.jpg")
+        img: require("../assets/img/Graphic Design/custodigit/custodigit_illus.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/custodigit/custodigit_logo_ideas.jpg")
+        img: require("../assets/img/Graphic Design/custodigit/custodigit_logo_ideas.jpg")
       }
     ]
   },
@@ -118,16 +117,16 @@ export const projects = [
     technologies: [
       technologies[2]
     ],
-    image: require("../../assets/img/Illustrations/designerchallenge/illustration_small.jpg"),
-    thumbnail: require("../../assets/img/Illustrations/designerchallenge/illustration_small.jpg"),
+    image: require("../assets/img/Illustrations/designerchallenge/illustration_small.jpg"),
+    thumbnail: require("../assets/img/Illustrations/designerchallenge/illustration_small.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Illustrations/designerchallenge/illustration_small_part1.jpg")
+        img: require("../assets/img/Illustrations/designerchallenge/illustration_small_part1.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Illustrations/designerchallenge/illustration_small_part2.jpg")
+        img: require("../assets/img/Illustrations/designerchallenge/illustration_small_part2.jpg")
       }
     ]
   },
@@ -140,16 +139,16 @@ export const projects = [
       technologies[0],
       technologies[2]
     ],
-    image: require("../../assets/img/Illustrations/genesis/thumbnail.jpg"),
-    thumbnail: require("../../assets/img/Illustrations/genesis/thumbnail.jpg"),
+    image: require("../assets/img/Illustrations/genesis/thumbnail.jpg"),
+    thumbnail: require("../assets/img/Illustrations/genesis/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Illustrations/genesis/basics_beamer-crop-u2955.jpg")
+        img: require("../assets/img/Illustrations/genesis/basics_beamer-crop-u2955.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Illustrations/genesis/genesis_stories_logo_v2-crop-u3554.jpg")
+        img: require("../assets/img/Illustrations/genesis/genesis_stories_logo_v2-crop-u3554.jpg")
       }
     ]
   },
@@ -162,12 +161,12 @@ export const projects = [
       technologies[1],
       technologies[2]
     ],
-    image: require("../../assets/img/Illustrations/appsteam/apps_team_comic1_1.jpg"),
-    thumbnail: require("../../assets/img/Illustrations/appsteam/thumbnail.jpg"),
+    image: require("../assets/img/Illustrations/appsteam/apps_team_comic1_1.jpg"),
+    thumbnail: require("../assets/img/Illustrations/appsteam/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Illustrations/appsteam/apps_team_comic.jpg")
+        img: require("../assets/img/Illustrations/appsteam/apps_team_comic.jpg")
       }
     ]
   },
@@ -179,16 +178,16 @@ export const projects = [
     technologies: [
       technologies[8]
     ],
-    image: require("../../assets/img/programming/zoom/zoom.jpg"),
-    thumbnail: require("../../assets/img/programming/zoom/zoom.jpg"),
+    image: require("../assets/img/programming/zoom/zoom.jpg"),
+    thumbnail: require("../assets/img/programming/zoom/zoom.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/programming/zoom/zoom_2.jpg")
+        img: require("../assets/img/programming/zoom/zoom_2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/programming/zoom/zoom_3.jpg")
+        img: require("../assets/img/programming/zoom/zoom_3.jpg")
       }
     ]
   },
@@ -201,20 +200,20 @@ export const projects = [
       technologies[7],
       technologies[13]
     ],
-    image: require("../../assets/img/programming/dbc/dbc.jpg"),
-    thumbnail: require("../../assets/img/programming/dbc/dbc.jpg"),
+    image: require("../assets/img/programming/dbc/dbc.jpg"),
+    thumbnail: require("../assets/img/programming/dbc/dbc.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/programming/dbc/dbc_2.jpg")
+        img: require("../assets/img/programming/dbc/dbc_2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/programming/dbc/dbc_3.jpg")
+        img: require("../assets/img/programming/dbc/dbc_3.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/programming/dbc/dbc_4.jpg")
+        img: require("../assets/img/programming/dbc/dbc_4.jpg")
       }
     ]
   },
@@ -229,8 +228,8 @@ export const projects = [
       technologies[11],
       technologies[12]
     ],
-    image: require("../../assets/img/programming/fitadviser/fitadviser.jpg"),
-    thumbnail: require("../../assets/img/programming/fitadviser/fitadviser.jpg"),
+    image: require("../assets/img/programming/fitadviser/fitadviser.jpg"),
+    thumbnail: require("../assets/img/programming/fitadviser/fitadviser.jpg"),
     imgs: [
       
     ]
@@ -244,28 +243,28 @@ export const projects = [
       technologies[7],
       technologies[13]
     ],
-    image: require("../../assets/img/programming/portfolio/portfolio.jpg"),
-    thumbnail: require("../../assets/img/programming/portfolio/portfolio.jpg"),
+    image: require("../assets/img/programming/portfolio/portfolio.jpg"),
+    thumbnail: require("../assets/img/programming/portfolio/portfolio.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/programming/portfolio/portfolio_2.jpg")
+        img: require("../assets/img/programming/portfolio/portfolio_2.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/programming/portfolio/portfolio_3.jpg")
+        img: require("../assets/img/programming/portfolio/portfolio_3.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/programming/portfolio/portfolio_4.jpg")
+        img: require("../assets/img/programming/portfolio/portfolio_4.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/programming/portfolio/portfolio_5.jpg")
+        img: require("../assets/img/programming/portfolio/portfolio_5.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/programming/portfolio/portfolio_dark.jpg")
+        img: require("../assets/img/programming/portfolio/portfolio_dark.jpg")
       }
     ]
   },
@@ -278,24 +277,24 @@ export const projects = [
       technologies[5],
       technologies[2]
     ],
-    image: require("../../assets/img/Photography/productions/thumbnail.jpg"),
-    thumbnail: require("../../assets/img/Photography/productions/thumbnail.jpg"),
+    image: require("../assets/img/Photography/productions/thumbnail.jpg"),
+    thumbnail: require("../assets/img/Photography/productions/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Photography/productions/studientage-2018-36.jpg")
+        img: require("../assets/img/Photography/productions/studientage-2018-36.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/productions/TIM_3228.jpg")
+        img: require("../assets/img/Photography/productions/TIM_3228.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/productions/weihnachts-gd-18-70.jpg")
+        img: require("../assets/img/Photography/productions/weihnachts-gd-18-70.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/productions/weihnachts-gd-18-94.jpg")
+        img: require("../assets/img/Photography/productions/weihnachts-gd-18-94.jpg")
       }
     ]
   },
@@ -308,40 +307,40 @@ export const projects = [
       technologies[5],
       technologies[2]
     ],
-    image: require("../../assets/img/Photography/lenajoni/thumbnail.jpg"),
-    thumbnail: require("../../assets/img/Photography/lenajoni/thumbnail.jpg"),
+    image: require("../assets/img/Photography/lenajoni/thumbnail.jpg"),
+    thumbnail: require("../assets/img/Photography/lenajoni/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-185.jpg")
+        img: require("../assets/img/Photography/lenajoni/wedding-lena-joni-185.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-209.jpg")
+        img: require("../assets/img/Photography/lenajoni/wedding-lena-joni-209.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-202.jpg")
+        img: require("../assets/img/Photography/lenajoni/wedding-lena-joni-202.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-147.jpg")
+        img: require("../assets/img/Photography/lenajoni/wedding-lena-joni-147.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-167.jpg")
+        img: require("../assets/img/Photography/lenajoni/wedding-lena-joni-167.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-213.jpg")
+        img: require("../assets/img/Photography/lenajoni/wedding-lena-joni-213.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-218.jpg")
+        img: require("../assets/img/Photography/lenajoni/wedding-lena-joni-218.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/lenajoni/wedding-lena-joni-194.jpg")
+        img: require("../assets/img/Photography/lenajoni/wedding-lena-joni-194.jpg")
       }
     ]
   },
@@ -354,20 +353,20 @@ export const projects = [
       technologies[5],
       technologies[2]
     ],
-    image: require("../../assets/img/Photography/freetime/thumbnail.jpg"),
-    thumbnail: require("../../assets/img/Photography/freetime/thumbnail.jpg"),
+    image: require("../assets/img/Photography/freetime/thumbnail.jpg"),
+    thumbnail: require("../assets/img/Photography/freetime/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Photography/freetime/DSC_6495.jpg")
+        img: require("../assets/img/Photography/freetime/DSC_6495.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/freetime/DSC_6535.jpg")
+        img: require("../assets/img/Photography/freetime/DSC_6535.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/freetime/TIM_0798.jpg")
+        img: require("../assets/img/Photography/freetime/TIM_0798.jpg")
       }
     ]
   },
@@ -380,32 +379,32 @@ export const projects = [
       technologies[5],
       technologies[2]
     ],
-    image: require("../../assets/img/Photography/people/thumbnail.jpg"),
-    thumbnail: require("../../assets/img/Photography/people/thumbnail.jpg"),
+    image: require("../assets/img/Photography/people/thumbnail.jpg"),
+    thumbnail: require("../assets/img/Photography/people/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Photography/people/humans-of-biel-color.jpg")
+        img: require("../assets/img/Photography/people/humans-of-biel-color.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/people/P1064610.jpg")
+        img: require("../assets/img/Photography/people/P1064610.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/people/MLR_6624.jpg")
+        img: require("../assets/img/Photography/people/MLR_6624.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/people/TIM_9579.jpg")
+        img: require("../assets/img/Photography/people/TIM_9579.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/people/wedding-lena-joni-220.jpg")
+        img: require("../assets/img/Photography/people/wedding-lena-joni-220.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/people/studientage-2018-87.jpg")
+        img: require("../assets/img/Photography/people/studientage-2018-87.jpg")
       }
     ]
   },
@@ -418,40 +417,40 @@ export const projects = [
       technologies[5],
       technologies[2]
     ],
-    image: require("../../assets/img/Photography/holidays/thumbnail.jpg"),
-    thumbnail: require("../../assets/img/Photography/holidays/thumbnail.jpg"),
+    image: require("../assets/img/Photography/holidays/thumbnail.jpg"),
+    thumbnail: require("../assets/img/Photography/holidays/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Photography/holidays/P4170055.jpg")
+        img: require("../assets/img/Photography/holidays/P4170055.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/holidays/P4190008.jpg")
+        img: require("../assets/img/Photography/holidays/P4190008.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/holidays/P4160003.jpg")
+        img: require("../assets/img/Photography/holidays/P4160003.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/holidays/P7220897.jpg")
+        img: require("../assets/img/Photography/holidays/P7220897.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/holidays/MLR_0536.jpg")
+        img: require("../assets/img/Photography/holidays/MLR_0536.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/holidays/MLR_0806.jpg")
+        img: require("../assets/img/Photography/holidays/MLR_0806.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/holidays/P4160320.jpg")
+        img: require("../assets/img/Photography/holidays/P4160320.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Photography/holidays/P4170112 (2)-Bearbeitet.jpg")
+        img: require("../assets/img/Photography/holidays/P4170112 (2)-Bearbeitet.jpg")
       }
     ]
   },
@@ -465,16 +464,16 @@ export const projects = [
       technologies[1],
       technologies[6]
     ],
-    image: require("../../assets/img/Graphic Design/can/CAN_Logo_V2.jpg"),
-    thumbnail: require("../../assets/img/Graphic Design/can/thumbnail.jpg"),
+    image: require("../assets/img/Graphic Design/can/CAN_Logo_V2.jpg"),
+    thumbnail: require("../assets/img/Graphic Design/can/thumbnail.jpg"),
     imgs: [
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/can/can_logo_ideas.jpg")
+        img: require("../assets/img/Graphic Design/can/can_logo_ideas.jpg")
       },
       {
         text: "img description",
-        img: require("../../assets/img/Graphic Design/can/Campaign_Analytics_Wallpaper_V3_SMALL.jpg")
+        img: require("../assets/img/Graphic Design/can/Campaign_Analytics_Wallpaper_V3_SMALL.jpg")
       }
     ]
   },
@@ -626,17 +625,17 @@ export const skills = [
 export const references = [
   {
     name: "Andreas Mast",
-    img: require("../../assets/img/references/mastandreas.jpg"),
+    img: require("../assets/img/references/mastandreas.jpg"),
     link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTBIMAA00"
   },
   {
     name: "Petre Tudor",
-    img: require("../../assets/img/references/tudorpetre.jpg"),
+    img: require("../assets/img/references/tudorpetre.jpg"),
     link: "https://collaboration.swisscom.com/SwisscomPerson.aspx?accountname=CORPROOT%5CTAATUPE3"
   },
   {
     name: "John Riordan",
-    img: require("../../assets/img/references/riordanjohn.jpg"),
+    img: require("../assets/img/references/riordanjohn.jpg"),
     link: "https://collaboration.swisscom.com/Person.aspx?accountname=CORPROOT%5CTAARIJO1"
   }
 ]

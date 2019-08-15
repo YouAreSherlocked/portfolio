@@ -1,5 +1,5 @@
 import actions from './actions';
-import * as fetch from './services/fetchServices';
+import * as fetch from '../services/fetchServices';
 
 const initState = () => async dispatch => {
     const sections = await fetch.sections;

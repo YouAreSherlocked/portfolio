@@ -103,6 +103,38 @@ a:hover {
   font-weight: bold;
 }
 
+button {
+  background: #00e683;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #02b467;
+}
+
+.btn-group {
+  margin: 40px -10px 20px;
+}
+
+.btn-group button {
+  margin: 0 10px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table thead{
+  font-weight: 600;
+}
+
+table td {
+  padding: 5px 40px 5px 0;
+}
+
 input {
   height: 60px;
   min-width: 300px;
@@ -515,6 +547,12 @@ nav p {
 nav p:hover {
   font-weight: 600;
   cursor: pointer;
+}
+
+nav hr {
+  border: 0;
+  height: 2px;
+  background-color: #ddd;
 }
 
 .menu-bg {
@@ -1005,3 +1043,8 @@ nav p:hover {
     font-size: 14px;
   }
 /* #endregion */
+
+#admin h2 {
+  margin-top: 80px;
+  text-align: left;
+}
