@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 5555;
 
 let db;
-const dbPath = 'mongodb+srv://timo:timo@quotes-cluster-v05ei.azure.mongodb.net/test?retryWrites=true&w=majority';
+const dbPath = 'mongodb+srv://mayertimo:sjPt33MeA9PfUQe3@portfolio.niluclm.mongodb.net/?retryWrites=true&w=majority&appName=Portfolio';
 const mongoClient = require('mongodb').MongoClient;
 
 // CONNECT TO DATABASE
